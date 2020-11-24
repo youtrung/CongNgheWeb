@@ -1,0 +1,40 @@
+﻿@using DoanWebQLMYPHAM.Models;
+@{
+    ViewBag.Title = "HienThiChiTiet";
+    Layout = "~/Views/_LayoutQLMyPham.cshtml";
+
+}
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/slick.css" rel="stylesheet" />
+@model Sanpham
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="for_slick_silder multiple-items">
+                <div class="items">
+                    <img src="~/Content/HinhAnh/9.jpg" />
+                </div>
+            </div>
+            <p><b> Mô Tả: </b></p>
+            <p>@Model.MoTa</p>
+        </div>
+
+      
+
+
+        <div class="col-md-6">
+            <h2> <b>@Model.Tensp </b>  </h2>
+            <p class="font-weight-normal text-danger">Đơn Giá: @Model.GiaBan<span>đ</span></p>
+            <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
+        </div>
+    </div>
+<div class="row">
+    <p>Sản phẩm liên quan </p>
+
+</div>
+    </div>
+<script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="~/Content/bootstrap/js/slick.min.js"></script>
+<script src="~/Content/bootstrap/js/custom.js"></script>

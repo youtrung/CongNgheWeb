@@ -1,0 +1,15 @@
+﻿
+.for_slick_silder {
+    display: flex;
+}
+
+    .for_slick_silder .items {
+        width: 350px;
+        height: 250px;
+        margin: 50px;
+    }
+
+        .for_slick_silder .items img {
+            width: 350px;
+            height: 250px;
+        }

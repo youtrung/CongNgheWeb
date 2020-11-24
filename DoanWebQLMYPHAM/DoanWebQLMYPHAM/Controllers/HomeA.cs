@@ -24,7 +24,7 @@ namespace DoanWebQLMYPHAM.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return;
+        
         }
     }
 }

@@ -1,0 +1,5 @@
+-Tuyền làm Layout 
+-Ru  làm trang chủ + danh mục sản phẩm 
+-Thư làm liên hệ +giới thiệu 
+-Trung làm các action đường dẫn ,chi tiết 
+

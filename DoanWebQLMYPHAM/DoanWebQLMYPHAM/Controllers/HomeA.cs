@@ -23,12 +23,7 @@ namespace DoanWebQLMYPHAM.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
-<<<<<<< HEAD
-            return ();
-=======
-        
->>>>>>> d59b04c54205ac9b6403ecb64412c45ebb10e288
+		return viEW();
         }
     }
 }

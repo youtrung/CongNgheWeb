@@ -181,6 +181,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap\css\slick-theme.css" />
     <Content Include="Content\bootstrap\css\slidesytle.css" />
+    <Content Include="Content\bootstrap\css\StyleLogin.css" />
     <Content Include="Content\bootstrap\js\custom.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -198,25 +199,29 @@
     <Content Include="Content\bootstrap\js\slick.js" />
     <Content Include="Content\bootstrap\css\slick.css" />
     <Content Include="Content\bootstrap\js\slick.min.js" />
-    <Content Include="Content\HinhAnh\1.jpg" />
-    <Content Include="Content\HinhAnh\10.jpg" />
-    <Content Include="Content\HinhAnh\11.jpg" />
-    <Content Include="Content\HinhAnh\12.jpg" />
-    <Content Include="Content\HinhAnh\13.jpg" />
-    <Content Include="Content\HinhAnh\14.jpg" />
-    <Content Include="Content\HinhAnh\15.jpg" />
-    <Content Include="Content\HinhAnh\16.jpg" />
-    <Content Include="Content\HinhAnh\17.jpg" />
-    <Content Include="Content\HinhAnh\18.jpg" />
-    <Content Include="Content\HinhAnh\19.jpg" />
-    <Content Include="Content\HinhAnh\2.jpg" />
-    <Content Include="Content\HinhAnh\3.jpg" />
-    <Content Include="Content\HinhAnh\4.jpg" />
-    <Content Include="Content\HinhAnh\5.jpg" />
-    <Content Include="Content\HinhAnh\6.jpg" />
-    <Content Include="Content\HinhAnh\7.jpg" />
-    <Content Include="Content\HinhAnh\8.jpg" />
-    <Content Include="Content\HinhAnh\9.jpg" />
+    <Content Include="Content\HinhAnh\00001.jpg" />
+    <Content Include="Content\HinhAnh\000010.jpg" />
+    <Content Include="Content\HinhAnh\000011.jpg" />
+    <Content Include="Content\HinhAnh\000012.jpg" />
+    <Content Include="Content\HinhAnh\000013.jpg" />
+    <Content Include="Content\HinhAnh\000014.jpg" />
+    <Content Include="Content\HinhAnh\000015.jpg" />
+    <Content Include="Content\HinhAnh\000016.jpg" />
+    <Content Include="Content\HinhAnh\000017.jpg" />
+    <Content Include="Content\HinhAnh\000018.jpg" />
+    <Content Include="Content\HinhAnh\000019.jpg" />
+    <Content Include="Content\HinhAnh\00002.jpg" />
+    <Content Include="Content\HinhAnh\00003.jpg" />
+    <Content Include="Content\HinhAnh\00004.jpg" />
+    <Content Include="Content\HinhAnh\00005.jpg" />
+    <Content Include="Content\HinhAnh\00006.jpg" />
+    <Content Include="Content\HinhAnh\00007.jpg" />
+    <Content Include="Content\HinhAnh\00008.jpg" />
+    <Content Include="Content\HinhAnh\00009.jpg" />
+    <Content Include="Content\HinhAnh\backgroundLogin.jpg" />
+    <Content Include="Content\HinhAnh\backgroundsneaker.jpg" />
+    <Content Include="Content\HinhAnh\bgdesign.png" />
+    <Content Include="Content\HinhAnh\bgLogin.jpg" />
     <Content Include="Content\HinhAnh\bocongthuong.png" />
     <Content Include="Content\HinhAnh\Dangnhap.png" />
     <Content Include="Content\HinhAnh\dienthoai.png" />
@@ -228,6 +233,7 @@
     <Content Include="Content\HinhAnh\Logo_1.jpg" />
     <Content Include="Content\HinhAnh\Logo_selenia.jpg" />
     <Content Include="Content\HinhAnh\mail.png" />
+    <Content Include="Content\HinhAnh\pic1.png" />
     <Content Include="Content\HinhAnh\pinterest.png" />
     <Content Include="Content\HinhAnh\Search-512.png" />
     <Content Include="Content\HinhAnh\twitter.png" />
@@ -256,7 +262,6 @@
     </Content>
     <None Include="Models\QLMP.dbml.layout">
       <DependentUpon>QLMP.dbml</DependentUpon>
-      <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -298,6 +303,9 @@
     <Content Include="Views\Chitiet\HienThiChiTiet.cshtml" />
     <Content Include="Views\TrangChu\DSThuongHieu.cshtml" />
     <Content Include="Views\TrangChu\TrangChu.cshtml" />
+    <Content Include="Views\TrangChu\MenuThuongHieu.cshtml" />
+    <Content Include="Views\TrangChu\Dangnhap.cshtml" />
+    <Content Include="Views\TrangChu\KhoitaolayoutTenUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

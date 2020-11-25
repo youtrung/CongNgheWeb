@@ -20,7 +20,8 @@ namespace DoanWebQLMYPHAM.Controllers
             {
                 return RedirectToAction("None","Trangchu");
             }
-            ViewBag.dsThuonghieu = db.Sanphams.Where(s => s.Mathuonghieu == sp.Mathuonghieu).Take(5).ToList();
+            List<Sanpham> items = db.Sanphams.Where(s => s.Mathuonghieu == sp.Mathuonghieu).ToList();
+            ViewBag.dsThuonghieu = items;
             return View(sp);
         }
        

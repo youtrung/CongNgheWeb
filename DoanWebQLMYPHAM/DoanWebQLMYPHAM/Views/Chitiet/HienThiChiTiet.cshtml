@@ -2,13 +2,9 @@
 @{
     ViewBag.Title = "HienThiChiTiet";
     Layout = "~/Views/_LayoutQLMyPham.cshtml";
-
+    var dsth =(List<Sanpham>)ViewBag.dsThuonghieu;
 }
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slick-theme.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slick.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slidesytle.css" rel="stylesheet" />
+
 @model Sanpham
 
 
@@ -16,16 +12,9 @@
     <div class="row">
         <div class="col-md-5">
             <div class="for_slick_silder multiple-items">
+            
                 <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-
-                </div>
-                <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-
-                </div>
-                <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
+                    <img src="~/Content/HinhAnh/@Model.AnhBia" alt="sd" />
 
                 </div>
             </div>
@@ -38,59 +27,30 @@
             <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
         </div>
     </div>
-    <div class="col-12">
+    <hr />
 
-        <div class="text-xl-center">
-            <h2>San pham lien quan</h2>
+    <div class="row">
+        <div class="container-fluid">
+            <div class="text-xl-center">
+                <h2>Các Sản Phẩm Liên Quan </h2>
+            </div>
+
+            <div class="for_slick_silder-v2 multiple-items-v2">
+                @foreach (var it in dsth)
+                {
+                    <div class="items">
+                        <img src="~/Content/HinhAnh/@it.AnhBia "  />
+                    </div>
+                }
+            </div>
         </div>
-
-        <div class="for_slick_silder-v2 multiple-items-v2">
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-
-        </div>
-
+        
     </div>
 
+       
+
+ 
+
 </div>
-<script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
-<script src="~/Content/bootstrap/js/slick.js"></script>
-<script src="~/Content/bootstrap/js/custom.js"></script>
+
+

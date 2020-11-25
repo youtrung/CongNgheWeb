@@ -21,11 +21,39 @@ namespace DoanWebQLMYPHAM.Controllers
             List<Thuonghieu> dsTH = data.Thuonghieus.ToList();
             return PartialView(dsTH);
         }
+        public ActionResult MenuThuongHieu()
+        {
+            List<Thuonghieu> dsTH = data.Thuonghieus.Take(10).ToList();
+            return PartialView(dsTH);
+        }
 
         public ActionResult HienThiTheoThuongHieu(int id)
         {
             List<Sanpham> dsHT = data.Sanphams.Where(sp => sp.Mathuonghieu == id).ToList();
             return View("TrangChu",dsHT);
+        }
+
+        [HttpGet]
+        public ActionResult Dangnhap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection col)
+        {
+            KhachHang kh = data.KhachHangs.FirstOrDefault(s => s.TaiKhoan == col["txtTen"] && s.MatKhau == col["txtPass"]);
+            if (kh != null)
+            {
+                Session["KH"] = kh;
+
+                return RedirectToAction("Trangchu");
+            }
+            return RedirectToAction("Dangnhap");
+        }
+        public ActionResult KhoitaolayoutTenUser()
+        {
+            KhachHang k = (KhachHang)Session["KH"];
+            return PartialView(k);
         }
     }
 }

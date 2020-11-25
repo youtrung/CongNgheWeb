@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Dangnhap";
+}
+<link href="~/Content/bootstrap/css/StyleLogin.css" rel="stylesheet" />
+
+
+    <div class="loginbox" >
+    <img src="~/Content/HinhAnh/pic1.png" class="avatar"/>
+    <h1>Login here</h1>
+    <form action="~/TrangChu/" runat="server">
+        <p>Username</p>
+        <input name="txtTen" type="text" />
+
+        <p>Password</p>
+        <input name="txtPass" type="password" placeholder="EnterPassword" />
+        <br />
+        <button type="submit">Log in</button>
+        <br />
+        <a href="#">Lost your account ?</a><br />
+        <a href="#">Don't have an account ?</a>
+    </form>
+
+</div>
+
+
+

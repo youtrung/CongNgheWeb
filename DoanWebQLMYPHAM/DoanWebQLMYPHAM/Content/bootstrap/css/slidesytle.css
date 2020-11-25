@@ -1,0 +1,101 @@
+﻿
+.for_slick_silder {
+    display: flex;
+}
+
+    .for_slick_silder .items {
+        width: 350px;
+        height: 350px;
+        margin-left:60px;
+        position:relative;
+    }
+
+    .for_slick_silder .items img {
+        width: 350px;
+        height: 350px;
+        transition: all linear .4s;
+    }
+        .for_slick_silder .slick_center img {
+            transform:scale(1.2);
+        }
+    .for_slick_silder .slick-dots li button{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        background:#000;
+    }
+    .for_slick_silder .slick-dots{
+        bottom:-40px;
+    }
+  
+
+
+
+
+
+
+
+    .for_slick_silder-v2 {
+        position: relative;
+    }
+
+    .for_slick_silder-v2 .items {
+
+    }
+
+
+    .for_slick_silder-v2 .items img {
+        width: 350px;
+        height: 250px;
+     
+    }
+
+    .for_slick_silder-v2 .priv_arrow{
+        position:absolute;
+        bottom:-50px;
+        left:20%;
+        color:#fff;
+        width:50px;
+        height:50px;
+        background:red;
+        border-radius:30%;
+        text-align:center;
+        line-height:50px;
+        display:inline-block;
+        cursor:pointer;
+    }
+        .for_slick_silder-v2 .next_arrow {
+            position: absolute;
+            bottom: -50px;
+            right: 20%;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 30%;
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .for_slick_silder-v2 .slick-dots li button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .for_slick_silder-v2 .slick-dots {
+            bottom: -40px;
+        }
+        .for_slick_silder-v2 .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity:.2;
+
+        }
+        .for_slick_silder-v2 .slick-active {
+            opacity: .5;
+        }
+        .for_slick_silder-v2 .slick-current  {
+            opacity: 1;
+        }

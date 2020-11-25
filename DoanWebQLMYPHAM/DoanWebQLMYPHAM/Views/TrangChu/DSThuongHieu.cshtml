@@ -1,0 +1,12 @@
+﻿@using DoanWebQLMYPHAM.Models;
+
+@model List<Thuonghieu>
+
+<ul class="nav flex-column">
+    @foreach (Thuonghieu th in Model)
+    {
+        <li class="nav-item">
+            @Html.ActionLink(@th.Tenthuonghieu,"HienThiTheoThuongHieu","TrangChu", new { id = th.Mathuonghieu }, new { @class = "nav-link"})
+        </li>
+    }
+</ul>

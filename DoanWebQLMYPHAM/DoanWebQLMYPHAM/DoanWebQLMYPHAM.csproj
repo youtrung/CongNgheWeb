@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,8 +202,22 @@
     <Content Include="Content\HinhAnh\7.jpg" />
     <Content Include="Content\HinhAnh\8.jpg" />
     <Content Include="Content\HinhAnh\9.jpg" />
+    <Content Include="Content\HinhAnh\bocongthuong.png" />
+    <Content Include="Content\HinhAnh\Dangnhap.png" />
+    <Content Include="Content\HinhAnh\dienthoai.png" />
+    <Content Include="Content\HinhAnh\dienthoaiban.png" />
+    <Content Include="Content\HinhAnh\facebook.png" />
+    <Content Include="Content\HinhAnh\gach.png" />
+    <Content Include="Content\HinhAnh\giohang.png" />
+    <Content Include="Content\HinhAnh\insta.png" />
     <Content Include="Content\HinhAnh\Logo_1.jpg" />
     <Content Include="Content\HinhAnh\Logo_selenia.jpg" />
+    <Content Include="Content\HinhAnh\mail.png" />
+    <Content Include="Content\HinhAnh\pinterest.png" />
+    <Content Include="Content\HinhAnh\Search-512.png" />
+    <Content Include="Content\HinhAnh\twitter.png" />
+    <Content Include="Content\HinhAnh\vitri.png" />
+    <Content Include="Content\HinhAnh\youtube.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -257,6 +272,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\_LayoutQLMyPham.cshtml" />
+    <Content Include="Views\Default1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

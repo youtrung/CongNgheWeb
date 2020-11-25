@@ -295,7 +295,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\_LayoutQLMyPham.cshtml" />
-    <Content Include="Views\Default1\Index.cshtml" />
     <Content Include="Views\Chitiet\HienThiChiTiet.cshtml" />
     <Content Include="Views\TrangChu\DSThuongHieu.cshtml" />
     <Content Include="Views\TrangChu\TrangChu.cshtml" />

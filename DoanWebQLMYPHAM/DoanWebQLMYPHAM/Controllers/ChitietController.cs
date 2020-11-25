@@ -13,9 +13,9 @@ namespace DoanWebQLMYPHAM.Controllers
         QLMPDataContext db = new QLMPDataContext();
         // GET: Chitiet
       
-        public ActionResult HienThiChiTiet()
+        public ActionResult HienThiChiTiet(int id)
         {
-            Sanpham sp = db.Sanphams.Where(t => t.Masp == 1).SingleOrDefault();
+            Sanpham sp = db.Sanphams.Where(t => t.Masp == id).SingleOrDefault();
             if (sp==null)
             {
                 return RedirectToAction("None","Trangchu");

@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChitietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,6 +196,8 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap\js\jquery-3.3.1.min.js" />
     <Content Include="Content\bootstrap\js\slick.js" />
+    <Content Include="Content\bootstrap\css\slick.css" />
+    <Content Include="Content\bootstrap\js\slick.min.js" />
     <Content Include="Content\HinhAnh\1.jpg" />
     <Content Include="Content\HinhAnh\10.jpg" />
     <Content Include="Content\HinhAnh\11.jpg" />
@@ -204,6 +207,8 @@
     <Content Include="Content\HinhAnh\15.jpg" />
     <Content Include="Content\HinhAnh\16.jpg" />
     <Content Include="Content\HinhAnh\17.jpg" />
+    <Content Include="Content\HinhAnh\18.jpg" />
+    <Content Include="Content\HinhAnh\19.jpg" />
     <Content Include="Content\HinhAnh\2.jpg" />
     <Content Include="Content\HinhAnh\3.jpg" />
     <Content Include="Content\HinhAnh\4.jpg" />
@@ -214,8 +219,6 @@
     <Content Include="Content\HinhAnh\9.jpg" />
     <Content Include="Content\HinhAnh\Logo_1.jpg" />
     <Content Include="Content\HinhAnh\Logo_selenia.jpg" />
-    <Content Include="Content\bootstrap\css\slick.css" />
-    <Content Include="Content\bootstrap\js\slick.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -277,6 +280,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Chitiet\HienThiChiTiet.cshtml" />
+    <Content Include="Views\TrangChu\DSThuongHieu.cshtml" />
+    <Content Include="Views\TrangChu\TrangChu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

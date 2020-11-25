@@ -162,11 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
-    <Compile Include="Controllers\Default1Controller.cs" />
-=======
     <Compile Include="Controllers\ChitietController.cs" />
->>>>>>> 1dedc5c44c78ca56716a9923282f580c491ab6ec
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
@@ -260,6 +256,7 @@
     </Content>
     <None Include="Models\QLMP.dbml.layout">
       <DependentUpon>QLMP.dbml</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -297,14 +294,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\_LayoutQLMyPham.cshtml" />
     <Content Include="Views\Default1\Index.cshtml" />
-=======
     <Content Include="Views\Chitiet\HienThiChiTiet.cshtml" />
     <Content Include="Views\TrangChu\DSThuongHieu.cshtml" />
     <Content Include="Views\TrangChu\TrangChu.cshtml" />
->>>>>>> 1dedc5c44c78ca56716a9923282f580c491ab6ec
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

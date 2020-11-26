@@ -45,8 +45,9 @@ namespace DoanWebQLMYPHAM.Controllers
             if (kh != null)
             {
                 Session["KH"] = kh;
-
-                return RedirectToAction("Trangchu");
+                KhachHang k = (KhachHang)Session["KH"];
+                ViewBag.user = k;
+                return RedirectToAction("TrangChu");
             }
             return RedirectToAction("Dangnhap");
         }

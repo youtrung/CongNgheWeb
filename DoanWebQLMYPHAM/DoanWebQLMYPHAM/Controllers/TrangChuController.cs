@@ -36,6 +36,7 @@ namespace DoanWebQLMYPHAM.Controllers
         [HttpGet]
         public ActionResult Dangnhap()
         {
+
             return View();
         }
         [HttpPost]
@@ -46,7 +47,7 @@ namespace DoanWebQLMYPHAM.Controllers
             {
                 Session["KH"] = kh;
                 KhachHang k = (KhachHang)Session["KH"];
-                ViewBag.user = k;
+             
                 return RedirectToAction("TrangChu");
             }
             return RedirectToAction("Dangnhap");
@@ -56,5 +57,37 @@ namespace DoanWebQLMYPHAM.Controllers
             KhachHang k = (KhachHang)Session["KH"];
             return PartialView(k);
         }
+        [HttpGet]
+        public ActionResult CreateAccount()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddAccount(FormCollection col)
+        {
+            string tenkh = col["txtHoTen"];
+            string ngaysinh = col["dtpNgaySinh"];
+            string gt = col["GioiTinh"];
+            string sdt = col["txtSDT"];
+            string dc = col["txtDC"];
+            string tk = col["txtTaikhoan"];
+            string ps = col["txtPass"];
+            string email = col["txtEmail"];
+            KhachHang kh = new KhachHang();
+            kh.HoTen = tenkh;
+            kh.GioiTinh = gt;
+            kh.DienThoai = sdt;
+            kh.DiaChi = dc;
+            kh.TaiKhoan = tk;
+            kh.MatKhau = ps;
+            kh.Email = email;
+            kh.NgaySinh = DateTime.Parse(ngaysinh);
+            data.KhachHangs.InsertOnSubmit(kh);
+            data.SubmitChanges();
+            Session["KH"] = kh;
+            KhachHang k = (KhachHang)Session["KH"];
+            return RedirectToAction("TrangChu");
+        }
+
     }
 }

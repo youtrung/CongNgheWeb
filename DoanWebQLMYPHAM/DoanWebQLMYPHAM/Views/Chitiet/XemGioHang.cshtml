@@ -1,0 +1,32 @@
+﻿@using DoanWebQLMYPHAM.Models;
+@model GioHang
+@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/_LayoutQLMyPham.cshtml";
+
+}
+
+<table>
+    <tr>
+        <td>Tên Sản Phẩm </td>
+        <td>Mã sản phẩm </td>
+        <td>Thành Tiền </td>
+    </tr>
+    @foreach (var sp in @Model.list)
+    {
+        <tr>
+            <td> @sp.sTensp </td>
+            <td>@sp.iMasp</td>
+            <td>@sp.ThanhTien</td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <button> @Html.ActionLink("Xac Nhan", "XacNhanGioHang", "Chitiet")</button>
+        </td>
+    </tr>
+
+</table>

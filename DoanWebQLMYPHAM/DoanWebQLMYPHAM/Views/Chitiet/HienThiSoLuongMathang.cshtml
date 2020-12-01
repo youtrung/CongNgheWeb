@@ -1,0 +1,10 @@
+﻿@using DoanWebQLMYPHAM.Models
+@model GioHang
+@if (Model == null)
+{
+    <label>0</label>
+}
+else
+{
+    <label>@Model.TongSlhang()</label>
+}

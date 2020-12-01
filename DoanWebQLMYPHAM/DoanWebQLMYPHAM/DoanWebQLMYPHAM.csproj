@@ -169,6 +169,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CardItem.cs" />
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\QLMP.designer.cs">
       <AutoGen>True</AutoGen>
@@ -307,6 +309,11 @@
     <Content Include="Views\TrangChu\MenuThuongHieu.cshtml" />
     <Content Include="Views\TrangChu\Dangnhap.cshtml" />
     <Content Include="Views\TrangChu\KhoitaolayoutTenUser.cshtml" />
+    <Content Include="Views\Chitiet\HienThiSoLuongMathang.cshtml" />
+    <Content Include="Views\Chitiet\XemGioHang.cshtml" />
+    <Content Include="Views\Chitiet\XacNhanGioHang.cshtml" />
+    <Content Include="Views\TrangChu\CreateAccount.cshtml" />
+    <Content Include="Views\Chitiet\QuanLiDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,7 @@
-﻿
+﻿@using DoanWebQLMYPHAM.Models; 
+@{ 
+    var bg = (GioHang)ViewBag.Message;
+}
 <!DOCTYPE html>
 
 <html>
@@ -27,8 +30,8 @@
                 <button type="submit" class="btn" style="background-color:goldenrod"><img style="height:25px" src="~/Content/HinhAnh/Search-512.png" /> </button>
             </div>
             <div class="col-md-3 mt-1 form-check-inline">
-                
-                @if (@Html.Action("KhoitaolayoutTenUser", "TrangChu").ToHtmlString().Trim().Length=="<label>0</label>".Length)
+
+                @if (@Html.Action("KhoitaolayoutTenUser", "TrangChu").ToHtmlString().Trim().Length == "<label>0</label>".Length)
                 {
                     <a href="@Url.Action("Dangnhap", "TrangChu")"><img src="~/Content/HinhAnh/Dangnhap.png" /></a>
                 }
@@ -37,7 +40,10 @@
                     @Html.Action("KhoitaolayoutTenUser", "TrangChu")
                 }
                 <img class="mt-2 ml-3" src="~/Content/HinhAnh/gach.png" />
-                <a href="@Url.Action("TenAcTionGioHang  ", "TenController")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
+                    <a href="@Url.Action("XemGioHang", "Chitiet")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
+                <span>
+                    @Html.Action("HienThiSoLuongMathang", "Chitiet")
+                </span>
             </div>
         </div>
         <div class="row mt-3">

@@ -3,61 +3,66 @@
     ViewBag.Title = "HienThiChiTiet";
     Layout = "~/Views/_LayoutQLMyPham.cshtml";
     var dsth =(List<Sanpham>)ViewBag.dsThuonghieu;
+    int i;
+    int k;
 }
 
 
 @model Sanpham
-
-
-<div class="container-fluid" >
-    <div class="row">
-        <div class="col-md-5">
-            <div class="for_slick_silder multiple-items">
-
-                <div class="items">
-                    <img src="~/Content/HinhAnh/@Model.AnhBia" alt="sd" />
-
-                </div>
-            </div>
-            <p><b> Mô Tả: </b></p>
-            <p>@Model.MoTa</p>
-        </div>
-        <div class="col-md-7">
-            <h2> <b>@Model.Tensp </b>  </h2>
-            <p class="font-weight-normal text-danger">Đơn Giá: @Model.GiaBan<span>đ</span></p>
-            <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
-            <div class="row">
-                <div class="col-md-3">
-                    <h3 class="text-center">Số Lượng </h3>
-                    <input aria-label="quantity" class="input-qty" max=999999 min=1 name="txtSoluong" type="number" value="Hien Thi SL ">
-                </div>
-                <div class="col-md-9">
-                    <input class="container-fluid bg-danger" type="button" name="Đặt vào giỏ " value="Giỏ Hàng" />
-                </div>
-            </div>
-        </div>
-       
-    </div>
-           
-    <hr />
-
-    <div class="row">
         <div class="container-fluid">
-            <div class="text-xl-center">
-                <h2>Các Sản Phẩm Liên Quan </h2>
-            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="for_slick_silder multiple-items">
 
-            <div class="for_slick_silder-v2 multiple-items-v2">
-                @foreach (var it in dsth)
-                {
-                    <div class="items">
-                        <img src="~/Content/HinhAnh/@it.AnhBia "  />
+                        <div class="items">
+                            <img src="~/Content/HinhAnh/@Model.AnhBia" alt="sd" />
+
+                        </div>
                     </div>
-                }
+                    <p><b> Mô Tả: </b></p>
+                    <p>@Model.MoTa</p>
+                </div>
+                <div class="col-md-7">
+                    <h2> <b>@Model.Tensp </b>  </h2>
+                    <p class="font-weight-normal text-danger">Đơn Giá: @Model.GiaBan<span>đ</span></p>
+                    <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
+                    
+                        <div class="container-fluid">
+                            <form action="~/Chitiet/GioHang" method="post">
+                                <div class="col-4">
+                                    <h3 class="text-center">Số Lượng </h3>
+                                    <input type="number" name="txtSL" value="1" />
+                                    <input type="text" class="text-hide" name="txtMsp" value="@Model.Masp" />
+                                </div>
+                                <div class="col-8">
+                                    <button type="submit" class="container-fluid bg-danger">Giỏ Hàng </button>
+                                </div>
+                            </form>
+                              
+                        </div>
+                    
+                </div>
+            </div>
+            <hr />
+
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="text-xl-center">
+                        <h2>Các Sản Phẩm Liên Quan </h2>
+                    </div>
+
+                    <div class="for_slick_silder-v2 multiple-items-v2">
+                        @foreach (var it in dsth)
+                        {
+                            <div class="items">
+                                <img src="~/Content/HinhAnh/@it.AnhBia " />
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>   
+    
 
 
 

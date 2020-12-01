@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DoanWebQLMYPHAM.Models.DonHang>
+
+@{
+    ViewBag.Title = "QuanLiDonHang";
+    Layout = "~/Views/_LayoutQLMyPham.cshtml";
+}
+@{
+    int stt = 0;
+}
+
+<div class="container text-center">
+    <h2>Quản Lý Đơn Hàng</h2>
+    <table class="table">
+        <tr>
+            <th>STT</th>
+            <th>
+                Ngày Đặt Hàng
+            </th>
+            <th>
+                Thông tin khách hàng
+            </th>
+            <th>
+                Ngày hẹn giao
+            </th>
+            <th>
+                Mã hóa đơn
+            </th>
+            <th>
+                Tình trạng
+            </th>
+            <th>
+                Duyệt giao hàng
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            stt++;
+            <tr>
+                <td>
+                    @stt
+                </td>
+                <td>
+                    @string.Format("{0:dd/MM/yyyy}", @item.NgayDat)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.MaKH)<br />
+                    @item.KhachHang.HoTen (@item.KhachHang.DienThoai)<br />
+                    @item.KhachHang.DiaChi
+                </td>
+                <td>
+                    @string.Format("{0:dd/MM/yyyy}", @item.NgayGiao)
+                </td>
+                <td>
+                    @item.MaDonHang
+                </td>
+                <td>
+                    @if (@item.NgayGiao == null)// chua giao
+                    {
+                        <input type="checkbox" disabled />
+                    }
+                    else
+                    {
+                        <input type="checkbox" checked disabled /> <label>Đã giao</label>
+                    }
+                </td>
+                <td>
+                    @if (@item.NgayGiao == null)
+                    {
+                        <input type="checkbox" name="@stt" value="@item.MaDonHang" />
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+    <button type="submit" class="btn btn-secondary">Giao hàng ngay</button>
+</div>

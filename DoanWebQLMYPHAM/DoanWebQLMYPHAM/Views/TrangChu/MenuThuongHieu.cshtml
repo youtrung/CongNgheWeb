@@ -5,7 +5,7 @@
 <ul class="nav flex-column">
     @foreach (Thuonghieu th in Model)
     {
-        <li class="nav-item">
+        <li class="nav-item border">
             @Html.ActionLink(@th.Tenthuonghieu, "HienThiTheoThuongHieu", "TrangChu", new { id = th.Mathuonghieu }, new { @class = "nav-link" })
         </li>
     }

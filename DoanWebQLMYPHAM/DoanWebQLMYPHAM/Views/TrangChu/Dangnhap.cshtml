@@ -9,39 +9,39 @@
 
 <div class="loginbox">
     <img src="~/Content/HinhAnh/pic1.png" class="avatar" />
-    <h1>Login here</h1>
-    <form action="~/TrangChu/Login" method="post" onsubmit="return validateForm() ">
-        <p>Username</p>
-        <input name="txtTen" type="text" id="txtTen" />
+            <h1>Login here</h1>
+            <form action="~/TrangChu/Login" method="post" onsubmit="return validateForm() ">
+                <p>Username</p>
+                <input name="txtTen" type="text" id="txtTen" />
 
-        <p>Password</p>
-        <input name="txtPass" type="password" placeholder="EnterPassword" id="txtPass" />
-        <br />
-        <button type="submit">Log in</button>
-        <br />
-        <a href="@Url.Action("CreateAccount", "TrangChu")">Don't have an account ?</a>
-    </form>
+                <p>Password</p>
+                <input name="txtPass" type="password" placeholder="EnterPassword" id="txtPass" />
+                <br />
+                <button type="submit">Log in</button>
+                <br />
+                <a href="@Url.Action("CreateAccount", "TrangChu")">Don't have an account ?</a>
+            </form>
+        </div>
 
-</div>
 
-<script language="javascript">
-    function validateForm() {
-        // Bước 1: Lấy giá trị của ngaygiao
-        var user = document.getElementById('txtTen').value;
-        var pass = document.getElementById('txtPass').value;
-        // Bước 2: Kiểm tra dữ liệu hợp lệ hay không
-        if (user == '') {
-            alert('Bạn chưa nhập tên đăng nhập');
-        }
-        else if (pass == '') {
-            alert('Bạn chưa nhập mật khẩu');
-        }
-        else {
+        <script language="javascript">
+            function validateForm() {
+                // Bước 1: Lấy giá trị của ngaygiao
+                var user = document.getElementById('txtTen').value;
+                var pass = document.getElementById('txtPass').value;
+                // Bước 2: Kiểm tra dữ liệu hợp lệ hay không
+                if (user == '') {
+                    alert('Bạn chưa nhập tên đăng nhập');
+                }
+                else if (pass == '') {
+                    alert('Bạn chưa nhập mật khẩu');
+                }
+                else {
                     alert('Dữ liệu hợp lệ, ta có thể chấp nhận submit form');
                     return true;
                 }
-        return false;
-    }
-</script>
+                return false;
+            }
+        </script>
 
 

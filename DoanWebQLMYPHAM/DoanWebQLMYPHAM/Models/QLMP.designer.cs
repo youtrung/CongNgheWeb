@@ -33,6 +33,9 @@ namespace DoanWebQLMYPHAM.Models
     partial void InsertChiTietDonHang(ChiTietDonHang instance);
     partial void UpdateChiTietDonHang(ChiTietDonHang instance);
     partial void DeleteChiTietDonHang(ChiTietDonHang instance);
+    partial void InsertThuonghieu(Thuonghieu instance);
+    partial void UpdateThuonghieu(Thuonghieu instance);
+    partial void DeleteThuonghieu(Thuonghieu instance);
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
@@ -45,13 +48,10 @@ namespace DoanWebQLMYPHAM.Models
     partial void InsertSanpham(Sanpham instance);
     partial void UpdateSanpham(Sanpham instance);
     partial void DeleteSanpham(Sanpham instance);
-    partial void InsertThuonghieu(Thuonghieu instance);
-    partial void UpdateThuonghieu(Thuonghieu instance);
-    partial void DeleteThuonghieu(Thuonghieu instance);
     #endregion
 		
 		public QLMPDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLMYPHAMConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLMYPHAMConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -88,6 +88,14 @@ namespace DoanWebQLMYPHAM.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Thuonghieu> Thuonghieus
+		{
+			get
+			{
+				return this.GetTable<Thuonghieu>();
+			}
+		}
+		
 		public System.Data.Linq.Table<DonHang> DonHangs
 		{
 			get
@@ -117,14 +125,6 @@ namespace DoanWebQLMYPHAM.Models
 			get
 			{
 				return this.GetTable<Sanpham>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Thuonghieu> Thuonghieus
-		{
-			get
-			{
-				return this.GetTable<Thuonghieu>();
 			}
 		}
 	}
@@ -342,6 +342,120 @@ namespace DoanWebQLMYPHAM.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Thuonghieu")]
+	public partial class Thuonghieu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Mathuonghieu;
+		
+		private string _Tenthuonghieu;
+		
+		private EntitySet<Sanpham> _Sanphams;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMathuonghieuChanging(int value);
+    partial void OnMathuonghieuChanged();
+    partial void OnTenthuonghieuChanging(string value);
+    partial void OnTenthuonghieuChanged();
+    #endregion
+		
+		public Thuonghieu()
+		{
+			this._Sanphams = new EntitySet<Sanpham>(new Action<Sanpham>(this.attach_Sanphams), new Action<Sanpham>(this.detach_Sanphams));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mathuonghieu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Mathuonghieu
+		{
+			get
+			{
+				return this._Mathuonghieu;
+			}
+			set
+			{
+				if ((this._Mathuonghieu != value))
+				{
+					this.OnMathuonghieuChanging(value);
+					this.SendPropertyChanging();
+					this._Mathuonghieu = value;
+					this.SendPropertyChanged("Mathuonghieu");
+					this.OnMathuonghieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tenthuonghieu", DbType="NVarChar(50)")]
+		public string Tenthuonghieu
+		{
+			get
+			{
+				return this._Tenthuonghieu;
+			}
+			set
+			{
+				if ((this._Tenthuonghieu != value))
+				{
+					this.OnTenthuonghieuChanging(value);
+					this.SendPropertyChanging();
+					this._Tenthuonghieu = value;
+					this.SendPropertyChanged("Tenthuonghieu");
+					this.OnTenthuonghieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Thuonghieu_Sanpham", Storage="_Sanphams", ThisKey="Mathuonghieu", OtherKey="Mathuonghieu")]
+		public EntitySet<Sanpham> Sanphams
+		{
+			get
+			{
+				return this._Sanphams;
+			}
+			set
+			{
+				this._Sanphams.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Sanphams(Sanpham entity)
+		{
+			this.SendPropertyChanging();
+			entity.Thuonghieu = this;
+		}
+		
+		private void detach_Sanphams(Sanpham entity)
+		{
+			this.SendPropertyChanging();
+			entity.Thuonghieu = null;
 		}
 	}
 	
@@ -1377,120 +1491,6 @@ namespace DoanWebQLMYPHAM.Models
 		{
 			this.SendPropertyChanging();
 			entity.Sanpham = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Thuonghieu")]
-	public partial class Thuonghieu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Mathuonghieu;
-		
-		private string _Tenthuonghieu;
-		
-		private EntitySet<Sanpham> _Sanphams;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMathuonghieuChanging(int value);
-    partial void OnMathuonghieuChanged();
-    partial void OnTenthuonghieuChanging(string value);
-    partial void OnTenthuonghieuChanged();
-    #endregion
-		
-		public Thuonghieu()
-		{
-			this._Sanphams = new EntitySet<Sanpham>(new Action<Sanpham>(this.attach_Sanphams), new Action<Sanpham>(this.detach_Sanphams));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mathuonghieu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Mathuonghieu
-		{
-			get
-			{
-				return this._Mathuonghieu;
-			}
-			set
-			{
-				if ((this._Mathuonghieu != value))
-				{
-					this.OnMathuonghieuChanging(value);
-					this.SendPropertyChanging();
-					this._Mathuonghieu = value;
-					this.SendPropertyChanged("Mathuonghieu");
-					this.OnMathuonghieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tenthuonghieu", DbType="NVarChar(50)")]
-		public string Tenthuonghieu
-		{
-			get
-			{
-				return this._Tenthuonghieu;
-			}
-			set
-			{
-				if ((this._Tenthuonghieu != value))
-				{
-					this.OnTenthuonghieuChanging(value);
-					this.SendPropertyChanging();
-					this._Tenthuonghieu = value;
-					this.SendPropertyChanged("Tenthuonghieu");
-					this.OnTenthuonghieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Thuonghieu_Sanpham", Storage="_Sanphams", ThisKey="Mathuonghieu", OtherKey="Mathuonghieu")]
-		public EntitySet<Sanpham> Sanphams
-		{
-			get
-			{
-				return this._Sanphams;
-			}
-			set
-			{
-				this._Sanphams.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Sanphams(Sanpham entity)
-		{
-			this.SendPropertyChanging();
-			entity.Thuonghieu = this;
-		}
-		
-		private void detach_Sanphams(Sanpham entity)
-		{
-			this.SendPropertyChanging();
-			entity.Thuonghieu = null;
 		}
 	}
 }

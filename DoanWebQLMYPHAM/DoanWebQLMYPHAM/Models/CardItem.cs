@@ -30,5 +30,18 @@ namespace DoanWebQLMYPHAM.Models
 
             }
         }
+        public CardItem(int masp)
+        {
+            Sanpham sp = db.Sanphams.Single(s => s.Masp == masp);
+            if (sp != null)
+            {
+                iMasp = masp;
+                sTensp = sp.Tensp;
+                sAnhbia = sp.AnhBia;
+                dDongia = Double.Parse(sp.GiaBan.ToString());
+                iSoluong = 1;
+
+            }
+        }
     }
 }

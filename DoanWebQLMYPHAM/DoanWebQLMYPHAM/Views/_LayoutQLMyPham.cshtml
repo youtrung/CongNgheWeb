@@ -40,7 +40,7 @@
                     @Html.Action("KhoitaolayoutTenUser", "TrangChu")
                 }
                 <img class="mt-2 ml-3" src="~/Content/HinhAnh/gach.png" />
-                    <a href="@Url.Action("XemGioHang", "Chitiet")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
+                <a href="@Url.Action("XemGioHang", "Chitiet")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
                 <span>
                     @Html.Action("HienThiSoLuongMathang", "Chitiet")
                 </span>
@@ -54,7 +54,7 @@
                     <div class="dropdown">
                         <a class="btn dropdown-toggle ml-5" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; height:50px; font-size:15px"><b>THƯƠNG HIỆU</b></a>
                         <div class="dropdown-menu ml-5" aria-labelledby="dropdownMenu">
-                            @Html.Action("MenuThuongHieu", "TrangChu", new {@class= "dropdown-item" })
+                            @Html.Action("MenuThuongHieu", "TrangChu", new { @class = "dropdown-item" })
                         </div>
                     </div>
                 </div>

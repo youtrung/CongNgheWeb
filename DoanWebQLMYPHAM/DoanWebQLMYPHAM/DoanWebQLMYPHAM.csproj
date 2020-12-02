@@ -314,6 +314,7 @@
     <Content Include="Views\Chitiet\XacNhanGioHang.cshtml" />
     <Content Include="Views\TrangChu\CreateAccount.cshtml" />
     <Content Include="Views\Chitiet\QuanLiDonHang.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

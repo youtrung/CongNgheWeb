@@ -6,27 +6,37 @@
 
 }
 
-<table>
-    <tr>
-        <td>Tên Sản Phẩm </td>
-        <td>Mã sản phẩm </td>
-        <td>Thành Tiền </td>
-    </tr>
-    @foreach (var sp in @Model.list)
-    {
+    <table class="table">
         <tr>
-            <td> @sp.sTensp </td>
-            <td>@sp.iMasp</td>
-            <td>@sp.ThanhTien</td>
+            <td>Mã sản phẩm </td>
+            <td>Tên sản phẩm</td>
+            <td>Ảnh</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Thành tiền</td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
-    }
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <button> @Html.ActionLink("Xac Nhan", "XacNhanGioHang", "Chitiet")</button>
-        </td>
-    </tr>
-
-</table>
+        @foreach (CardItem item in Model.list)
+        {
+            <tr>
+                <td>@item.iMasp</td>
+                <td>@item.sTensp</td>
+                <td>@item.sAnhbia</td>
+                <td>@item.iSoluong</td>
+                <td>@item.dDongia</td>
+                <td>@item.ThanhTien</td>
+            </tr>
+        }
+        <tr>
+            <td>Tổng</td>
+            <td></td>
+            <td></td>
+            <td>@Model.TongSlhang()</td>
+            <td></td>
+            <td>@Model.Tongthanhtien()</td>
+            <td><button class="btn btn-secondary">@Html.ActionLink("Xóa giỏ hàng", "XoaGioHang", "Chitiet")</button></td>
+            <td><button class="btn btn-secondary">@Html.ActionLink("Đặt hàng", "XacNhanGioHang", "Chitiet")</button></td>
+        </tr>
+    </table>

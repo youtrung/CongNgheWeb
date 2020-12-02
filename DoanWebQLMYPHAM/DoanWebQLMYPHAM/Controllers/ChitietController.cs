@@ -97,7 +97,16 @@ namespace DoanWebQLMYPHAM.Controllers
             var dh = db.DonHangs.ToList();
             return View(dh);
         }
+        public ActionResult GiaoHang(FormCollection col)
+        {
+         
+            return View();
+        }
+        public ActionResult XoaGioHang()
+        {
+            Session["GH"] = null;
+            return RedirectToAction("TrangChu", "TrangChu");
+        }
         
-
     }
 }

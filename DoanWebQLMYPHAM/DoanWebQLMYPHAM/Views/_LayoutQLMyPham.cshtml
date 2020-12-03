@@ -1,10 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using DoanWebQLMYPHAM.Models; 
+@{ 
+    var bg = (GioHang)ViewBag.Message;
+}
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap/css/slick-theme.css" rel="stylesheet" />
@@ -13,8 +16,8 @@
 </head>
 <body>
     <div class="container-fluid">
-       <div class="row" style="background-color:goldenrod; height:30px">
-           <div class="col-md-5"></div>
+        <div class="row" style="background-color:goldenrod; height:30px">
+            <div class="col-md-5"></div>
             <p class="mt-1" style="font-size:13px;color:white">Miễn phí free ship với đơn hàng trên 1.000.000 đ</p>
         </div>
         <div class="row mt-2">
@@ -24,12 +27,23 @@
             </div>
             <div class="col-md-5 mt-1 form-check-inline">
                 <input style="height:40px" class="container" type="text" placeholder="Tìm kiếm sản phẩm..." />
-                <button type="submit"class="btn" style="background-color:goldenrod" ><img style="height:25px" src="~/Content/HinhAnh/Search-512.png" /> </button>
+                <button type="submit" class="btn" style="background-color:goldenrod"><img style="height:25px" src="~/Content/HinhAnh/Search-512.png" /> </button>
             </div>
             <div class="col-md-3 mt-1 form-check-inline">
-                <a href="@Url.Action("TenAcTionDangNhap","TenController")"><img src="~/Content/HinhAnh/Dangnhap.png"/></a>
+
+                @if (@Html.Action("KhoitaolayoutTenUser", "TrangChu").ToHtmlString().Trim().Length == "<label>0</label>".Length)
+                {
+                    <a href="@Url.Action("Dangnhap", "TrangChu")"><img src="~/Content/HinhAnh/Dangnhap.png" /></a>
+                }
+                else
+                {
+                    @Html.Action("KhoitaolayoutTenUser", "TrangChu")
+                }
                 <img class="mt-2 ml-3" src="~/Content/HinhAnh/gach.png" />
-                <a href="@Url.Action("TenAcTionGioHang  ","TenController")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
+                <a href="@Url.Action("XemGioHang", "Chitiet")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>
+                <span>
+                    @Html.Action("HienThiSoLuongMathang", "Chitiet")
+                </span>
             </div>
         </div>
         <div class="row mt-3">
@@ -40,20 +54,18 @@
                     <div class="dropdown">
                         <a class="btn dropdown-toggle ml-5" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; height:50px; font-size:15px"><b>THƯƠNG HIỆU</b></a>
                         <div class="dropdown-menu ml-5" aria-labelledby="dropdownMenu">
-                            <a class="dropdown-item" href="#">A</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">B</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">C</a>
+                            @Html.Action("MenuThuongHieu", "TrangChu", new { @class = "dropdown-item" })
                         </div>
                     </div>
                 </div>
                 <a class="btn ml-5" href="@Url.Action("TrangChu", "TrangChu")" style="background-color:white; color:black; height:50px; font-size:15px"><b>GIỚI THIỆU</b></a>
-                <a class="btn ml-5" href="@Url.Action("TrangChu", "TrangChu")" style="background-color:white; color:black; height:50px; font-size:15px"><b>LIÊN HỆ</b></a>
-                <a class="btn ml-5" href="@Url.Action("TrangChu", "Chitiet")" style="background-color:white; color:black; height:50px; font-size:15px"><b>QUẢN LÝ ĐƠN</b></a>
+                <a class="btn ml-5" href="@Url.Action("Tintuc", "LienHe")" style="background-color:white; color:black; height:50px; font-size:15px"><b>TIN TỨC</b></a>
+                <a class="btn ml-5" href="@Url.Action("Lienhe", "LienHe")" style="background-color:white; color:black; height:50px; font-size:15px"><b>LIÊN HỆ</b></a>
+                <a class="btn ml-5" href="@Url.Action("QuanLiDonHang", "Chitiet")" style="background-color:white; color:black; height:50px; font-size:15px"><b>QUẢN LÝ ĐƠN</b></a>
              </div>
+            </div>
         </div>
-        <div class="row">
+        <div class="row ">
             @RenderBody()
         </div>
         <div class="row bg-dark">
@@ -107,5 +119,7 @@
     </div>
     <script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
     <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/bootstrap/js/slick.js"></script>
+    <script src="~/Content/bootstrap/js/custom.js"></script>
 </body>
 </html>

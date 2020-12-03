@@ -1,0 +1,38 @@
+﻿@using DoanWebQLMYPHAM.Models;
+@{
+    Layout = null;
+}
+@model List<Sanpham>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/slick.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/slidesytle.css" rel="stylesheet" />
+</head>
+<body>
+    @foreach (var it in Model)
+    {
+        <div class="col-md-5">
+            <div class="for_slick_silder-v2 multiple-items-v2">
+                <div class="items">
+                    <img src="~/Content/HinhAnh/@it.AnhBia" alt="sd" />
+                </div>
+            </div>
+            <p><b> Mô Tả: </b></p>
+
+        </div>
+    }
+
+</body>
+
+</html>
+<script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Content/bootstrap/js/slick.js"></script>
+<script src="~/Content/bootstrap/js/custom.js"></script>

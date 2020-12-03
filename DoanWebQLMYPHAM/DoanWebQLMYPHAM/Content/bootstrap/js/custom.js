@@ -10,11 +10,10 @@
     centerPadding: '60px',
 
 });
-$(function () {
-    $('.multiple-items-v2').slick({
+$('.multiple-items-v2').slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: true,
         dots: true,
         centerMode: true,
@@ -22,6 +21,3 @@ $(function () {
         nextArrow: '<span class="next_arrow"><i class="fas fa-angle-right"></i> </span>',
 
     });
-});
-
-

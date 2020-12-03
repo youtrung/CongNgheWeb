@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "ulenhe";
+    Layout = "~/Views/_LayoutQLMyPham.cshtml";
+}
+
+<h2>Liên Hệ</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Nếu bạn có gì thắc mắc hãy ulên hệ với chúng tôi qua địa chỉ </p>
+            <div>
+                <ul>
+                    <li>ĐIỆN THOẠI</li>
+                    <li>1900.636.099</li> 
+                </ul>
+                <ul>
+                    <li>ĐỊA CHỈ</li>
+                    <li>Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
+                </ul>
+                <ul>
+                    <li>EMAIL</li>
+                    <li>hi@Caois.com</li> 
+                </ul>
+                <ul>
+                    <li>THỜI GIAN LÀM VIỆC</li>
+                    <li>Thứ 2 đến Thứ 6 từ 8h30 đến 18h; Thứ 7 và Chủ nhật từ 8h00 đến 17h00</li>
+                
+                </ul>
+                <ul>
+                    <li>MẠNG XÃ HỘI </li>
+                </ul>
+                <br />
+          
+                <a href="#"> <img src="~/Content/HinhAnh/tải xuống (1).jpg" width:"10px" /> </a>     
+                <a href="#">
+                    <img src="~/Content/HinhAnh/tải xuống (1).png" width:"10px" />
+                 
+                </a>
+                <a href="#">
+                    <img src="~/Content/HinhAnh/tải xuống (2).jpg" width:"10px" />
+                  
+                </a>
+                <a href="#">
+                    <img src="~/Content/HinhAnh/youtube.png" width:"10px" />
+                 
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 ">
+            <h2>Gửi thắc mắc cho chúng tôi</h2>
+            <p>Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và chúng tôi sẽ ulên lạc lại với bạn sớm nhất có thể .</p>
+            <form action="~/LienHe/YeuCau" method="post">
+                <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="nulneFormInputGroupUsername2"
+                           placeholder="Tên của bạn ">
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="email" class="form-control" id="nputEmail4" placeholder="Email của bạn ">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="number" placeholder="Số điện thoại ">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nulneFormInputGroupUsername2"
+                           placeholder="Nội dung  ">
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google Privacy Poulcy and Terms of Service apply.</p>
+                <button type="submit" class="btn btn-primary">Gửi cho chúng tôi </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -39,16 +39,16 @@
         position: relative;
     }
 
-    .for_slick_silder-v2 .items {
+        .for_slick_silder-v2 .items {
+            width: 350px;
+            height: 250px;
+        }
 
-    }
-
-
-    .for_slick_silder-v2 .items img {
-        width: 350px;
-        height: 250px;
-     
-    }
+        .for_slick_silder-v2 .items img {
+            width: 350px;
+            height: 250px;
+            
+        }
 
     .for_slick_silder-v2 .priv_arrow{
         position:absolute;

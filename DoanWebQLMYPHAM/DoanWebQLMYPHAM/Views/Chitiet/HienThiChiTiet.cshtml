@@ -2,95 +2,56 @@
 @{
     ViewBag.Title = "HienThiChiTiet";
     Layout = "~/Views/_LayoutQLMyPham.cshtml";
-
+    var dsth = (List<Sanpham>)ViewBag.dsThuonghieu;
 }
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slick-theme.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slick.css" rel="stylesheet" />
-<link href="~/Content/bootstrap/css/slidesytle.css" rel="stylesheet" />
+
+
 @model Sanpham
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
             <div class="for_slick_silder multiple-items">
                 <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-
-                </div>
-                <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-
-                </div>
-                <div class="items">
-                    <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-
+                    <img src="~/Content/HinhAnh/@Model.AnhBia" alt="sd" />
                 </div>
             </div>
             <p><b> Mô Tả: </b></p>
             <p>@Model.MoTa</p>
         </div>
         <div class="col-md-7">
-            <h2> <b>@Model.Tensp </b>  </h2>
-            <p class="font-weight-normal text-danger">Đơn Giá: @Model.GiaBan<span>đ</span></p>
-            <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
+                <h2> <b>@Model.Tensp </b>  </h2>
+                <p class="font-weight-normal text-danger">Đơn Giá: @Model.GiaBan<span>đ</span></p>
+                <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
+                <form action="~/Chitiet/GioHang" method="post">
+                        <h3 class="text-center">Số Lượng </h3>
+                        <input type="number" name="txtSL" value="1" />
+                        <input type="text" class="text-hide" name="txtMsp" value="@Model.Masp" />
+                        <span> <button type="submit" class="container-fluid bg-danger">Giỏ Hàng </button></span>
+                </form>
+             
+           
+                <p><i class='fas fa-check-circle' style='font-size:24px;color:red'></i> Cam kết 100% chính hãng </p>
+                <p>
+                    <i class='fas fa-car'></i>Giao hàng dự kiến:
+                    Thứ 6 - Thứ 4 từ 9h00 - 20h00
+                </p>
+                <p><i class='fab fa-rev'></i>Sản phẩm không nhận đổi trả</p>
         </div>
     </div>
-    <div class="col-12">
-
-        <div class="text-xl-center">
-            <h2>San pham lien quan</h2>
-        </div>
-
-        <div class="for_slick_silder-v2 multiple-items-v2">
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
+    <hr />
+    <div class="row">
+        <div class="container-fluid">
+            <div class="text-xl-center">
+                <h2>Các Sản Phẩm Liên Quan </h2>
             </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
+            <div class="for_slick_silder-v2 multiple-items-v2">
+                @foreach (var it in dsth)
+                {
+                    <div class="items">
+                        <img src="~/Content/HinhAnh/@it.AnhBia " />
+                    </div>
+                }
             </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-            <div class="items">
-                <img src="~/Content/HinhAnh/6.jpg" alt="sd" />
-                <div class="overlay"></div>
-            </div>
-
-        </div>
-
+        </div>    
     </div>
-
 </div>
-<script src="~/Content/bootstrap/js/jquery-3.3.1.min.js"></script>
-<script src="~/Content/bootstrap/js/slick.js"></script>
-<script src="~/Content/bootstrap/js/custom.js"></script>

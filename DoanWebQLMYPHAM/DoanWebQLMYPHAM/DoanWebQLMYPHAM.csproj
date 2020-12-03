@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChitietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,10 +222,7 @@
     <Content Include="Content\HinhAnh\00007.jpg" />
     <Content Include="Content\HinhAnh\00008.jpg" />
     <Content Include="Content\HinhAnh\00009.jpg" />
-    <Content Include="Content\HinhAnh\backgroundLogin.jpg" />
-    <Content Include="Content\HinhAnh\backgroundsneaker.jpg" />
     <Content Include="Content\HinhAnh\bgdesign.png" />
-    <Content Include="Content\HinhAnh\bgLogin.jpg" />
     <Content Include="Content\HinhAnh\bocongthuong.png" />
     <Content Include="Content\HinhAnh\Dangnhap.png" />
     <Content Include="Content\HinhAnh\dienthoai.png" />
@@ -240,6 +238,11 @@
     <Content Include="Content\HinhAnh\pinterest.png" />
     <Content Include="Content\HinhAnh\Search-512.png" />
     <Content Include="Content\HinhAnh\twitter.png" />
+    <Content Include="Content\HinhAnh\tải xuống %281%29.jpg" />
+    <Content Include="Content\HinhAnh\tải xuống %281%29.png" />
+    <Content Include="Content\HinhAnh\tải xuống %282%29.jpg" />
+    <Content Include="Content\HinhAnh\tải xuống.jpg" />
+    <Content Include="Content\HinhAnh\tải xuống.png" />
     <Content Include="Content\HinhAnh\vitri.png" />
     <Content Include="Content\HinhAnh\youtube.png" />
     <Content Include="favicon.ico" />
@@ -263,6 +266,9 @@
       <LastGenOutput>QLMP.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Models\QLMP.dbml.layout">
+      <DependentUpon>QLMP.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -312,6 +318,8 @@
     <Content Include="Views\TrangChu\CreateAccount.cshtml" />
     <Content Include="Views\Chitiet\QuanLiDonHang.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LienHe\Lienhe.cshtml" />
+    <Content Include="Views\LienHe\Tintuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,11 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\QLMP.dbml.layout">
-      <DependentUpon>QLMP.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

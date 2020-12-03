@@ -48,10 +48,10 @@
                                     @string.Format("{0:dd/MM/yyyy}", @item.NgayDat)
                                 </td>
                                 <td class="text-center">
-                                    @Html.DisplayFor(modelItem => item.MaKH)<br />
-                                    @item.KhachHang.HoTen (@item.KhachHang.DienThoai)<br />
-                                    @item.KhachHang.DiaChi
-                                </td>
+                                    Mã KH:@Html.DisplayFor(modelItem => item.MaKH)<br />
+                                    Họ Tên:@item.KhachHang.HoTen (@item.KhachHang.DienThoai)<br />
+                                    Địa Chỉ:@item.KhachHang.DiaChi
+                                </td>   
                                 <td>
                                     @string.Format("{0:dd/MM/yyyy}", @item.NgayGiao
 )

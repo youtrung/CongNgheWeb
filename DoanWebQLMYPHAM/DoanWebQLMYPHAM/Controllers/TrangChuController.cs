@@ -88,6 +88,13 @@ namespace DoanWebQLMYPHAM.Controllers
             KhachHang k = (KhachHang)Session["KH"];
             return RedirectToAction("TrangChu");
         }
+        [HttpPost]
+        public ActionResult TimKiemSP(FormCollection col)
+        {
+            string tensp = col["txtTimKiem"];
+            List<Sanpham> sp = data.Sanphams.Where(r => r.Tensp.Contains(tensp)).ToList();
+                return View(sp);
+        }
 
     }
 }

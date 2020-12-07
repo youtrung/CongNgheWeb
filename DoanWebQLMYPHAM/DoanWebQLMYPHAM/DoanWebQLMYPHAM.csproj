@@ -266,6 +266,9 @@
       <LastGenOutput>QLMP.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Models\QLMP.dbml.layout">
+      <DependentUpon>QLMP.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -317,6 +320,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LienHe\Lienhe.cshtml" />
     <Content Include="Views\LienHe\Tintuc.cshtml" />
+    <Content Include="Views\TrangChu\TimKiemSP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,11 +334,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\QLMP.dbml.layout">
-      <DependentUpon>QLMP.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

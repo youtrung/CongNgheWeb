@@ -10,11 +10,13 @@ namespace DoanWebQLMYPHAM.Controllers
     {
         QLMPDataContext data = new QLMPDataContext();
         // GET: TrangChu
+        [HttpGet]
         public ActionResult TrangChu()
         {
             List<Sanpham> dsSP = data.Sanphams.ToList();
             return View(dsSP);
         }
+       
 
         public ActionResult DSThuongHieu()
         {
@@ -40,17 +42,36 @@ namespace DoanWebQLMYPHAM.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(FormCollection col)
+        //public ActionResult Login(FormCollection col)
+        //{
+        //    KhachHang kh = data.KhachHangs.FirstOrDefault(s => s.TaiKhoan == col["txtTen"] && s.MatKhau == col["txtPass"]);
+        //    if (kh != null)
+        //    {
+        //        Session["KH"] = kh;
+        //        KhachHang k = (KhachHang)Session["KH"];
+
+        //        return RedirectToAction("TrangChu");
+        //    }
+        //    return RedirectToAction("Dangnhap");
+        //}
+        public JsonResult Login(KhachHang t)
         {
-            KhachHang kh = data.KhachHangs.FirstOrDefault(s => s.TaiKhoan == col["txtTen"] && s.MatKhau == col["txtPass"]);
-            if (kh != null)
+            int kq = 1;
+            try
             {
-                Session["KH"] = kh;
-                KhachHang k = (KhachHang)Session["KH"];
-             
-                return RedirectToAction("TrangChu");
+                KhachHang kh = data.KhachHangs.FirstOrDefault(s => s.TaiKhoan == t.TaiKhoan && s.MatKhau == t.MatKhau);
+                if (kh != null)
+                {
+                    Session["KH"] = kh;
+                    KhachHang k = (KhachHang)Session["KH"];
+                    return Json(kq, JsonRequestBehavior.AllowGet);
+                }
             }
-            return RedirectToAction("Dangnhap");
+            catch
+            {
+                kq = 0;
+            }
+            return Json(kq, JsonRequestBehavior.AllowGet);
         }
         public ActionResult KhoitaolayoutTenUser()
         {

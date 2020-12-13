@@ -19,4 +19,13 @@
 
     });
 }
-
+function Signin() {
+    $.ajax({
+        type: "GET",
+        url: "/TrangChu/CreateAccount",
+        success: function () {
+           
+            
+        }
+    });
+}

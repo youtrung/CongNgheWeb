@@ -165,6 +165,7 @@
     <Compile Include="Controllers\ChitietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\MyPhamController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,6 +202,7 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap\js\jquery-3.3.1.min.js" />
     <Content Include="Content\bootstrap\js\login.js" />
+    <Content Include="Content\bootstrap\js\MyPham.js" />
     <Content Include="Content\bootstrap\js\slick.js" />
     <Content Include="Content\bootstrap\css\slick.css" />
     <Content Include="Content\bootstrap\js\slick.min.js" />
@@ -325,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MyPham\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

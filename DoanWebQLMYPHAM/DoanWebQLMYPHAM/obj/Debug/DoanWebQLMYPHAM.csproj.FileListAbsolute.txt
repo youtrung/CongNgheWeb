@@ -223,3 +223,9 @@ E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\Microsoft.Owin.Security.Micro
 E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.csprojResolveAssemblyReference.cache
 E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.dll
 E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.pdb
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Net.Http.Formatting.dll
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.dll
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHost.dll
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Net.Http.Formatting.xml
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.xml
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHost.xml

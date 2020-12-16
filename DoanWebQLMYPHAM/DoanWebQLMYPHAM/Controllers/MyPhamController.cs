@@ -11,15 +11,17 @@ namespace DoanWebQLMYPHAM.Controllers
         // GET: MyPham
         QLMPDataContext db = new QLMPDataContext();
         ApiMyPhamController d = new ApiMyPhamController();
-        public JsonResult getbyId(int id)
-        {
-            var p = db.Sanphams.Where(r => r.Masp == id).SingleOrDefault();
-            return Json(p, JsonRequestBehavior.AllowGet);
+        [HttpGet]
+        public ActionResult getbyId(int id)
+        {     
+                Sanpham p = db.Sanphams.FirstOrDefault(x=>x.Masp==id);
+                ViewBag.sp = p;
+                return View();
         }
-        public JsonResult Themsp(Sanpham s)
+        public ActionResult Themsp(Sanpham s)
         {
             var kq=d.InsertMP(s);
-            return Json(kq, JsonRequestBehavior.AllowGet);
+            return View();
         }
     }
 }

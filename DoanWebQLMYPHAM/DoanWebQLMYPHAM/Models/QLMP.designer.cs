@@ -51,7 +51,7 @@ namespace DoanWebQLMYPHAM.Models
     #endregion
 		
 		public QLMPDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLMYPHAMConnectionString3"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLMYPHAMConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

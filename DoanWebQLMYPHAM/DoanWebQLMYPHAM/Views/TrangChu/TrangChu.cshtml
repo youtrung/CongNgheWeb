@@ -19,7 +19,7 @@
 }
 
     <div class="container-fluid">
-        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLable" aria-hidden="true">
+        <div class="modal" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLable" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header"><h4 class="modal-title">Model Sản Phẩm </h4></div>
@@ -59,14 +59,14 @@
                                 <input type="text" class="form-control" id="idthuonghieu" />
                             </div>
                             <div class="form-group">
-                                <label for="Masuatxu">Mã suất xứ </label>
+                                <label for="Masuatxu">Mã xuất xứ </label>
                                 @*nên để combox*@
-                                <input type="text" class="form-control" id="idsuatsu" />
+                                <input type="text" class="form-control" id="idxuatxu" />
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="btnLogin" onclick="Login();">Login</button>
+                        <button type="button" class="btn btn-primary" id="btnAdd" onclick=" return Login();">Thêm mỹ phẩm</button>
                         <a class="btn btn-primary" href="@Url.Action("CreateAccount", "TrangChu")">Don't have an account ?</a>
                         <button type="button" class="btn btn-danger" id="iclose" data-dismiss="modal">X</button>
                     </div>
@@ -132,8 +132,7 @@
         </div>
         <div class="row">
             <button class="btn btn-dark" id="btnThem" onclick="Thems();">Thêm mới</button>
-            <button class="btn btn-dark" id="btnSua" onclick="Suas();">Sửa</button>
-            <button class="btn btn-danger" id="btnXoa" onclick="Xoas();">Xóa</button>
+      
         </div>
         <div class="row">
             <div style="background-image:url(../../Content/HinhAnh/00002.jpg);height:800px;width:100%" class="text-md-left">
@@ -168,3 +167,6 @@
             </div>
         </div>
     </div>
+
+
+<script src="~/Content/bootstrap/js/MyPham.js"></script>

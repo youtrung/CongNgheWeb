@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/_LayoutQLMyPham.cshtml";
-
+    var kh =(KhachHang)ViewBag.kh;
 }
 
 @helper Truncate (string input, int length)
@@ -19,62 +19,62 @@
 }
 
     <div class="container-fluid">
-        <div class="modal" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLable" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header"><h4 class="modal-title">Model Sản Phẩm </h4></div>
-                    <div class="modal-body">
-                        <form>
+        <form action="/MyPham/Themsp" method="post" enctype="multipart/form-data">
+            <div class="modal" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLable" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"><h4 class="modal-title">Model Sản Phẩm </h4></div>
+                        <div class="modal-body">
+
                             <div class="form-group">
                                 <label for="Masp">Mã Sản Phẩm</label>
                                 <input type="text" class="form-control" id="Masp" placeholder="ID" disabled="disabled" />
                             </div>
                             <div class="form-group">
                                 <label for="Tensp">Tên sản phẩm</label>
-                                <input type="text" class="form-control" id="ten" placeholder="Enter Name" />
+                                <input type="text" class="form-control" name="txtTen" placeholder="Enter Name" />
                             </div>
                             <div class="form-group">
                                 <label for="Anhbiasp">Ảnh bìa </label>
-                                <input type="image" class="form-control" id="anh" placeholder="" />
+                                <input type="file" name="fupload1" />
                             </div>
                             <div class="form-group">
                                 <label for="Giasp">Giá Bán </label>
-                                <input type="text" class="form-control" id="giaban" placeholder="Enter Price" />
+                                <input type="text" class="form-control" name="txtGiaban" placeholder="Enter Price" />
                             </div>
                             <div class="form-group">
                                 <label for="Motasp">Mô tả</label>
-                                <input type="text" class="form-control" id="mota" placeholder="Enter Mô tả " />
+                                <textarea name="MoTa" placeholder="Enter Mô tả " > </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="Ngaycapnhapsp">Ngày cập nhập </label>
-                                <input type="date" class="form-control" id="ngaycapnhap" />
+                                <input type="date" class="form-control" name="txtNgaycapnhap" />
                             </div>
                             <div class="form-group">
                                 <label for="Solgton">Số Lượng Tồn</label>
-                                <input type="number" class="form-control" id="slton" />
+                                <input type="number" class="form-control" name="txtSoluongton" />
                             </div>
                             <div class="form-group">
                                 <label for="Mathuonghieu">Mã Thương Hiệu</label>
                                 @*nên để combox*@
-                                <input type="text" class="form-control" id="idthuonghieu" />
+                                @Html.DropDownList("th");
                             </div>
                             <div class="form-group">
                                 <label for="Masuatxu">Mã xuất xứ </label>
                                 @*nên để combox*@
-                                <input type="text" class="form-control" id="idxuatxu" />
+                                @Html.DropDownList("xx");
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="btnAdd" onclick=" return Login();">Thêm mỹ phẩm</button>
-                        <a class="btn btn-primary" href="@Url.Action("CreateAccount", "TrangChu")">Don't have an account ?</a>
-                        <button type="button" class="btn btn-danger" id="iclose" data-dismiss="modal">X</button>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Thêm mỹ phẩm</button>
+
+                            <button type="button" class="btn btn-danger" id="iclose" data-dismiss="modal">X</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>
-
+        </form>
 
 
         <div class="row">
@@ -117,17 +117,25 @@
                         @foreach (Sanpham sp in Model)
                         {
                         <div class="col-lg-3 card mr-2 mt-2 text-center">
-                           
+
                             <img src="~/Content/HinhAnh/@sp.AnhBia" style="width:200px; height:200px" class="card-img-top mt-2" />
                             <div class="card-body">
                                 <h5 style="font-size:20px" class="card-title">@Truncate(sp.Tensp, 30)</h5>
                             </div>
                             <label style="color:red">@sp.GiaBan đ</label>
                             @Html.ActionLink("Chi tiết", "HienThiChiTiet", "Chitiet", new { id = @sp.Masp }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Sửa", "getbyId", "MyPham",new { id=sp.Masp}, new { @class = "btn btn-warning" })
+                            @if (kh != null)
+                            {
+                                if (kh.TaiKhoan == "admin")
+                                {
+                                    @Html.ActionLink("Sửa", "getbyId", "MyPham", new { id = sp.Masp }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Xóa", "Delete", "MyPham", new { id = sp.Masp }, new { @class = "btn btn-danger" })
+                                }
+                            }
+
                             @*<a href="#" onclick=" return getbyID();">Sửa</a>
-                            <a href="#" onclick="Delete(@sp.Masp)">Xóa</a>*@
-                            
+        <a href="#" onclick="Delete(@sp.Masp)">Xóa</a>*@
+
                         </div>
                         }
                       
@@ -136,9 +144,16 @@
             </div>
         </div>
         <div class="row">
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal1" id="btnOpen">Thêm mới</button>
-      
-        </div>
+            @if (kh != null)
+            {
+                if (kh.TaiKhoan == "admin")
+                {
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal1" id="btnOpen">Thêm mới</button>
+                }
+            }
+
+
+            </div>
         <div class="row">
             <div style="background-image:url(../../Content/HinhAnh/00002.jpg);height:800px;width:100%" class="text-md-left">
                 <h1>Kem khoáng Deadsea</h1>

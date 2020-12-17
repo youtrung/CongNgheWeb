@@ -1,0 +1,80 @@
+﻿@using DoanWebQLMYPHAM.Models;
+@{
+    ViewBag.Title = "getbyId";
+    Layout = "~/Views/_LayoutQLMyPham.cshtml";
+    var sp = (Sanpham)ViewBag.sp;
+}
+@model  Sanpham 
+
+
+    <div class="container-fluid">
+        <form action="/MyPham/Update" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Ma Sản Phẩm  </label>
+                <div class="col-md-10">
+                    <input type="text" name="txtMa" value="@sp.Masp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Tên Sản Phẩm  </label>
+                <div class="col-md-10">
+                    <input type="text" name="txtTen" value="@sp.Tensp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mô tả   </label>
+                <div class="container-fluid">
+                    <textarea name="Mota">@sp.MoTa </textarea>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+
+                <label>Giá Bán   </label>
+                <div class="col-md-10">
+                   
+                    <input type="text" name="txtGiaban" value="@sp.GiaBan" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ngày câp Nhập   </label>
+                <div class="col-md-10">
+                    <input type="date" name="txtNgaycapnhap"  value="@sp.NgayCapNhat"  />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Thương hiệu   </label>
+                <div class="col-md-10">
+                    @Html.DropDownList("th");
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Xuất Xứ </label>
+                <div class="col-md-10">
+                    @Html.DropDownList("xx");
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ảnh bìa  </label>
+                <div class="col-md-10">
+                    <input type="file" name="fupload" value="@sp.AnhBia" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Số Lượng Tồn  </label>
+                <div class="col-md-10">
+                    <input type="text" name="txtSoluongton" value="@sp.SoLuongTon" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mới </label>
+                <div class="col-md-10">
+                    <input type="text" name="txtMoi" value="@sp.Moi" />
+                </div>
+            </div>
+            <button type="submit" class="align-content-lg-center">Cập nhập </button>
+        </form>
+    </div>
+  
+
+

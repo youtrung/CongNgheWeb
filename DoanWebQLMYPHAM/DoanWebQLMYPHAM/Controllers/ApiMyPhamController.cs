@@ -24,8 +24,23 @@ namespace DoanWebQLMYPHAM.Controllers
                 sp.MoTa = s.MoTa;
                 sp.NgayCapNhat = s.NgayCapNhat;
                 sp.SoLuongTon = s.SoLuongTon;
-                sp.Moi = s.Moi;
+              
                 db.Sanphams.InsertOnSubmit(sp);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        [HttpDelete]
+        public bool Deletesp(int id)
+        {
+            try
+            {
+                var sp = db.Sanphams.Where(t => t.Masp == id).SingleOrDefault();
+                db.Sanphams.DeleteOnSubmit(sp);
                 db.SubmitChanges();
                 return true;
             }

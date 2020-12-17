@@ -14,6 +14,10 @@ namespace DoanWebQLMYPHAM.Controllers
         public ActionResult TrangChu()
         {
             List<Sanpham> dsSP = data.Sanphams.ToList();
+            ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
+            ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
+            KhachHang k = (KhachHang)Session["KH"];
+            ViewBag.kh = k;
             return View(dsSP);
         }
        

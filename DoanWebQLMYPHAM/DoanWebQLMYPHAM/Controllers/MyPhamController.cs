@@ -28,28 +28,38 @@ namespace DoanWebQLMYPHAM.Controllers
             
             string Tensp = col["txtTen"];
             string Mota = col["MoTa"];
-            string txtGiaban = col["txtGiaban"];
+            int txtGiaban =Int32.Parse(col["txtGiaban"]);
             string txtNgaycapnhap = col["txtNgaycapnhap"];
-            string thuonghieu = col["th"];
-            string xuatxu = col["xx"];
+            int thuonghieu =Int32.Parse(col["th"]);
+            int xuatxu = Int32.Parse(col["xx"]);
             string txtSoluongton = col["txtSoluongton"];
             string txtMoi = col["txtMoi"];
-            string ston = col["txtSoluongton"];
+            int ston = Int32.Parse(col["txtSoluongton"]);
             int msp = Int32.Parse(col["txtMa"]);
-            Sanpham p = db.Sanphams.Where(t => t.Masp ==msp).SingleOrDefault();
-            p.AnhBia = Path.GetFileName(fupload.FileName);
-            fupload.SaveAs(Server.MapPath("~/Content/HinhAnh/") + p.AnhBia);
-            p.Tensp = Tensp;
-            p.MoTa = Mota;
-            p.GiaBan =Int32.Parse(txtGiaban);
-            p.SoLuongTon =Int32.Parse(txtSoluongton);
-            p.NgayCapNhat = DateTime.Parse(txtNgaycapnhap);
-            p.Mathuonghieu =Int32.Parse(col["th"]);
-            p.Maxuatxu =Int32.Parse(col["xx"]);
-            p.Moi =Int32.Parse(txtMoi);
-            ValidateRequest = false;
-            db.SubmitChanges();
-            return RedirectToAction("TrangChu","TrangChu");
+            if (Tensp=="" ||  Mota == "" || txtNgaycapnhap ==null || txtSoluongton==null)
+            {
+                ViewData["validate"] = "Khong duoc de trong du lieu";
+            }
+            else
+            {
+                d.Updatesp(msp, Tensp, Path.GetFileName(fupload.FileName), thuonghieu, xuatxu, txtGiaban, Mota, DateTime.Parse(txtNgaycapnhap), ston);
+                return RedirectToAction("TrangChu", "TrangChu");
+            }
+            return this.getbyId(msp);
+            //Sanpham p = db.Sanphams.Where(t => t.Masp ==msp).SingleOrDefault();
+            //p.AnhBia = Path.GetFileName(fupload.FileName);
+            //fupload.SaveAs(Server.MapPath("~/Content/HinhAnh/") + p.AnhBia);
+            //p.Tensp = Tensp;
+            //p.MoTa = Mota;
+            //p.GiaBan =Int32.Parse(txtGiaban);
+            //p.SoLuongTon =Int32.Parse(txtSoluongton);
+            //p.NgayCapNhat = DateTime.Parse(txtNgaycapnhap);
+            //p.Mathuonghieu =Int32.Parse(col["th"]);
+            //p.Maxuatxu =Int32.Parse(col["xx"]);
+            //p.Moi =Int32.Parse(txtMoi);
+            //ValidateRequest = false;
+            //db.SubmitChanges();
+            
         }
         [HttpPost]
         public ActionResult Themsp(Sanpham s,FormCollection col, HttpPostedFileBase fupload1)

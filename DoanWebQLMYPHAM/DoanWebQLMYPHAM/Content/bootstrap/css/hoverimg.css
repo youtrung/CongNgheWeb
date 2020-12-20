@@ -1,0 +1,45 @@
+﻿#d1 #img {
+    width: 300px;
+    height: 300px;
+    backface-visibility: hidden;
+}
+#d1 #img:hover{
+    opacity:0.4;
+}
+#d1:hover .card-body .card-title {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    padding: 20px 32px;
+    background-color: #008CBA;
+}
+#d1:hover .overlay {
+    opacity: 0.5;
+}
+#d1 .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+#d1:hover .middle {
+    opacity: 0.8;
+}
+
+

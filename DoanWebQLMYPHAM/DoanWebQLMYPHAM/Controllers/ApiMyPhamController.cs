@@ -49,13 +49,12 @@ namespace DoanWebQLMYPHAM.Controllers
                 return false;
             }
         }
-        public bool Updatesp(int id,string tsp,string anh,int th,int xx,int gb,string mota,DateTime ngay,int sl)
+        public bool Updatesp(int id,string tsp,int th,int xx,int gb,string mota,DateTime ngay,int sl)
         {
             try
             {
                 Sanpham sp = db.Sanphams.Where(t => t.Masp == id).SingleOrDefault();
                 sp.Tensp = tsp;
-                sp.AnhBia = anh;
                 sp.Mathuonghieu = th;
                 sp.Maxuatxu = xx;
                 sp.GiaBan = gb;

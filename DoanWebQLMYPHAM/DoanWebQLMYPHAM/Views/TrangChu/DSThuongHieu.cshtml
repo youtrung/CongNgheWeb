@@ -9,7 +9,7 @@
             @foreach (Thuonghieu th in Model)
             {
                 <li class="nav-item">
-                    @Html.ActionLink(@th.Tenthuonghieu, "HienThiTheoThuongHieu", "TrangChu", new { id = th.Mathuonghieu }, new { @class = "nav-link" })
+                    @Html.ActionLink(@th.Tenthuonghieu, "HienThiTheoThuongHieu", "TrangChu", new { id = th.Mathuonghieu }, new { @class = "nav-link" ,style = "font-size:20px; font-weight:800; letter-spacing:1px; text-transform:uppercase;" })
                 </li>
             }
         </ul>

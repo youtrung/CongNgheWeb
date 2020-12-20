@@ -4,21 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DoanWebQLMYPHAM.Models;
+using PagedList;
 namespace DoanWebQLMYPHAM.Controllers
 {
     public class TrangChuController : Controller
     {
+     
         QLMPDataContext data = new QLMPDataContext();
         // GET: TrangChu
         [HttpGet]
-        public ActionResult TrangChu()
+        public ActionResult TrangChu(int? page)
         {
+            int pageSize = 9;
+            int pagenumber = (page ?? 1);
             List<Sanpham> dsSP = data.Sanphams.ToList();
+            var onePageOfProducts= dsSP.ToPagedList(pagenumber,pageSize);
             ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
             ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
             KhachHang k = (KhachHang)Session["KH"];
             ViewBag.kh = k;
-            return View(dsSP);
+            ViewBag.OnePageOfProducts = onePageOfProducts;
+            return View(onePageOfProducts);
         }
        
 
@@ -27,20 +33,32 @@ namespace DoanWebQLMYPHAM.Controllers
             List<Thuonghieu> dsTH = data.Thuonghieus.ToList();
             ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
             ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
+            KhachHang k = (KhachHang)Session["KH"];
+            ViewBag.kh = k;
             return PartialView(dsTH);
         }
         public ActionResult MenuThuongHieu()
         {
             List<Thuonghieu> dsTH = data.Thuonghieus.Take(10).ToList();
+            ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
+            ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
+            KhachHang k = (KhachHang)Session["KH"];
+            ViewBag.kh = k;
             return PartialView(dsTH);
         }
 
-        public ActionResult HienThiTheoThuongHieu(int id)
+        public ActionResult HienThiTheoThuongHieu(int id,int? page)
         {
+            int pageSize = 25;
+            int pagenumber = (page ?? 1);
             List<Sanpham> dsHT = data.Sanphams.Where(sp => sp.Mathuonghieu == id).ToList();
+            var onePageOfProducts = dsHT.ToPagedList(pagenumber, pageSize);
+            ViewBag.OnePageOfProducts = onePageOfProducts;
+            KhachHang k = (KhachHang)Session["KH"];
+            ViewBag.kh = k;
             ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
             ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
-            return View("TrangChu",dsHT);
+            return this.View("TrangChu",onePageOfProducts);
         }
 
         [HttpGet]
@@ -118,11 +136,15 @@ namespace DoanWebQLMYPHAM.Controllers
             return RedirectToAction("TrangChu");
         }
         [HttpPost]
-        public ActionResult TimKiemSP(FormCollection col)
+        public ActionResult TimKiemSP(FormCollection col,int? page)
         {
+            int pageSize = 25;
+            int pagenumber = (page ?? 1);
             string tensp = col["txtTimKiem"];
             List<Sanpham> sp = data.Sanphams.Where(r => r.Tensp.Contains(tensp)).ToList();
-                return View(sp);
+            var onePageOfProducts = sp.ToPagedList(pagenumber, pageSize);
+            ViewBag.OnePageOfProducts = onePageOfProducts;
+            return View(onePageOfProducts);
         }
 
     }

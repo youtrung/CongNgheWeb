@@ -229,3 +229,7 @@ D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHos
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Net.Http.Formatting.xml
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.xml
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHost.xml
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.dll
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.dll
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.xml
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.xml

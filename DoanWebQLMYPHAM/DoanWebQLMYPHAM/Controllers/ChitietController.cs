@@ -15,6 +15,8 @@ namespace DoanWebQLMYPHAM.Controllers
       
         public ActionResult HienThiChiTiet(int id)
         {
+            KhachHang kh = Session["KH"] as KhachHang;
+            ViewBag.k = kh;
             Sanpham sp = db.Sanphams.Where(t => t.Masp == id).SingleOrDefault();
             if (sp==null)
             {
@@ -22,6 +24,7 @@ namespace DoanWebQLMYPHAM.Controllers
             }
             List<Sanpham> items = db.Sanphams.Where(s => s.Mathuonghieu == sp.Mathuonghieu).ToList();
             ViewBag.dsThuonghieu = items;
+            ViewData["error"] = "Bạn Chưa Có Tài Khoản!";
             return View(sp);
         }
        
@@ -33,12 +36,14 @@ namespace DoanWebQLMYPHAM.Controllers
             KhachHang kh = Session["KH"] as KhachHang;
             if (kh == null)
             {
-                return RedirectToAction("Dangnhap","TrangChu");
+                ViewData["error"] = "Bạn Chưa Có Tài Khoản!";
+           
             }
             if (gio == null)
             {
                 gio = new GioHang();
             }
+          
             int kq = gio.Them(msp,sl);
             Session["GH"] = gio;
             return RedirectToAction("TrangChu", "TrangChu");

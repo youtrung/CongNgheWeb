@@ -197,6 +197,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\css\dsthuonghieu.css" />
     <Content Include="Content\bootstrap\css\slick-theme.css" />
     <Content Include="Content\bootstrap\css\slidesytle.css" />
     <Content Include="Content\bootstrap\css\StyleLogin.css" />
@@ -253,6 +254,7 @@
     <Content Include="Content\HinhAnh\pic1.png" />
     <Content Include="Content\HinhAnh\pinterest.png" />
     <Content Include="Content\HinhAnh\Search-512.png" />
+    <Content Include="Content\HinhAnh\son.PNG" />
     <Content Include="Content\HinhAnh\twitter.png" />
     <Content Include="Content\HinhAnh\tải xuống %281%29.jpg" />
     <Content Include="Content\HinhAnh\tải xuống %281%29.png" />

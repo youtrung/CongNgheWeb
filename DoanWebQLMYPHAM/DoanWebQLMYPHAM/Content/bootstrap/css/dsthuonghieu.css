@@ -1,0 +1,13 @@
+﻿body {
+}
+#container-left nav-item .trans {
+    position: absolute;
+    width: 0px;
+    height: 40px;
+    background-color: blue;
+    left: 0;
+    top: 0;
+    background: url("../../HinhAnh/son.PNG") no-repeat right;
+    transition: width 1.5s ease-in-out 0.1s;
+}
+

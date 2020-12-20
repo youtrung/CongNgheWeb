@@ -25,6 +25,8 @@ namespace DoanWebQLMYPHAM.Controllers
         public ActionResult DSThuongHieu()
         {
             List<Thuonghieu> dsTH = data.Thuonghieus.ToList();
+            ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
+            ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
             return PartialView(dsTH);
         }
         public ActionResult MenuThuongHieu()
@@ -36,6 +38,8 @@ namespace DoanWebQLMYPHAM.Controllers
         public ActionResult HienThiTheoThuongHieu(int id)
         {
             List<Sanpham> dsHT = data.Sanphams.Where(sp => sp.Mathuonghieu == id).ToList();
+            ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
+            ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
             return View("TrangChu",dsHT);
         }
 

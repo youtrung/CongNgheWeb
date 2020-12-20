@@ -3,6 +3,7 @@
     ViewBag.Title = "HienThiChiTiet";
     Layout = "~/Views/_LayoutQLMyPham.cshtml";
     var dsth = (List<Sanpham>)ViewBag.dsThuonghieu;
+    var kh = (KhachHang)ViewBag.k;
 }
 
 
@@ -24,9 +25,23 @@
                 <p>Xuất xứ : @Model.NhaXuatXu.Ten </p>
                 <form action="~/Chitiet/GioHang" method="post">
                         <h3 class="text-center">Số Lượng </h3>
-                        <input type="number" name="txtSL" value="1" />
+                        <input type="number" class="container-fluid" name="txtSL" value="1" />
                         <input type="text" class="text-hide" name="txtMsp" value="@Model.Masp" />
-                        <span> <button type="submit" class="container-fluid bg-danger">Giỏ Hàng </button></span>
+                        <span>
+                            @if (kh == null)
+                            {
+                           
+                                @ViewData["error"]
+                           
+                                <button type="submit" class="container-fluid bg-warning " disabled >Giỏ Hàng </button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="container-fluid bg-danger">Giỏ Hàng </button>
+                            }
+
+
+                        </span>
                 </form>
              
            

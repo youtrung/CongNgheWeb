@@ -24,7 +24,7 @@ namespace DoanWebQLMYPHAM.Controllers
             }
             List<Sanpham> items = db.Sanphams.Where(s => s.Mathuonghieu == sp.Mathuonghieu).ToList();
             ViewBag.dsThuonghieu = items;
-            ViewData["error"] = "Bạn Chưa Có Tài Khoản!";
+           
             return View(sp);
         }
        
@@ -34,11 +34,7 @@ namespace DoanWebQLMYPHAM.Controllers
             int msp = Int32.Parse(num["txtMsp"]);
                 GioHang gio = Session["GH"] as GioHang;
             KhachHang kh = Session["KH"] as KhachHang;
-            if (kh == null)
-            {
-                ViewData["error"] = "Bạn Chưa Có Tài Khoản!";
            
-            }
             if (gio == null)
             {
                 gio = new GioHang();

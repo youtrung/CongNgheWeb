@@ -233,3 +233,13 @@ D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.dll
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.dll
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.xml
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.xml
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.dll
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.dll
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Net.Http.Formatting.dll
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.dll
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHost.dll
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.xml
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\PagedList.Mvc.xml
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Net.Http.Formatting.xml
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.xml
+E:\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\bin\System.Web.Http.WebHost.xml

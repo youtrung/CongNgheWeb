@@ -144,7 +144,7 @@ namespace DoanWebQLMYPHAM.Controllers
             List<Sanpham> sp = data.Sanphams.Where(r => r.Tensp.Contains(tensp)).ToList();
             var onePageOfProducts = sp.ToPagedList(pagenumber, pageSize);
             ViewBag.OnePageOfProducts = onePageOfProducts;
-            return View(onePageOfProducts);
+            return View("TrangChu",onePageOfProducts);
         }
 
     }

@@ -53,10 +53,10 @@ namespace DoanWebQLMYPHAM.Controllers
         {
             
             GioHang gio = (GioHang)Session["GH"];
-            if (gio==null)
-            {
-                return RedirectToAction("TrangChu", "TrangChu");
-            }
+            //if (gio==null)
+            //{
+            //    return RedirectToAction("TrangChu", "TrangChu");
+            //}
             return View(gio);
         }
         public ActionResult XacNhanGioHang()
@@ -106,6 +106,16 @@ namespace DoanWebQLMYPHAM.Controllers
         public ActionResult XoaGioHang()
         {
             Session["GH"] = null;
+            return RedirectToAction("TrangChu", "TrangChu");
+        }
+        public ActionResult Xoasp(int msp,int sl)
+        {
+            GioHang gio = (GioHang)Session["GH"];
+            var kq = gio.Xoa(msp, sl);
+            return View("Xemgiohang",gio);
+        }
+        public ActionResult Vetrangchu()
+        {
             return RedirectToAction("TrangChu", "TrangChu");
         }
         

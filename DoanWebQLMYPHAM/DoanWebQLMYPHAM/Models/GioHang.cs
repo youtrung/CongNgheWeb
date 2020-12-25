@@ -56,14 +56,14 @@ namespace DoanWebQLMYPHAM.Models
             CardItem sp = list.Find(t => t.iMasp == ims);
             if (sp != null)
             {
-                //if (sp.iSoluong - sl > 0)
-                //{
-                //    sp.iSoluong=sp.iSoluong-sl;
-                //}
-                //else
+                if (sp.iSoluong - sl > 0)
                 {
-                    CardItem product = new CardItem(ims,sl);
-                    list.Remove(product);
+                    sp.iSoluong = sp.iSoluong - sl;
+                }
+                else
+                {
+                    
+                    list.Remove(sp);
                 }
 
             }

@@ -146,6 +146,13 @@ namespace DoanWebQLMYPHAM.Controllers
             ViewBag.OnePageOfProducts = onePageOfProducts;
             return View("TrangChu",onePageOfProducts);
         }
+        public ActionResult Logout()
+        {
+            Session["KH"] = null;
+            Session["GH"] = null;
+            return RedirectToAction("TrangChu");
+        }
+
 
     }
 }

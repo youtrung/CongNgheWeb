@@ -69,7 +69,11 @@
                 }
                 else
                 {
-                    @Html.Action("KhoitaolayoutTenUser", "TrangChu")
+                    <div class="form-group">
+                        @Html.Action("KhoitaolayoutTenUser", "TrangChu")
+                        <a class="btn mb-3" href="@Url.Action("Logout", "TrangChu")" style=" color:red  ; height:50px; font-size:15px">Đăng xuất </a>
+                    </div>
+
                 }
                 <img class="mt-2 ml-3" src="~/Content/HinhAnh/gach.png" />
                 <a href="@Url.Action("XemGioHang", "Chitiet")"><img class="mt-2 ml-3" src="~/Content/HinhAnh/giohang.png" /></a>

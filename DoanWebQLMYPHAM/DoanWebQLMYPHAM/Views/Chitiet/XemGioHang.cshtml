@@ -6,9 +6,11 @@
 
 }
 
+@if (Model != null)
+{
     <table class="table">
         <tr>
-            
+
             <td>Tên sản phẩm</td>
             <td>Ảnh</td>
             <td>Số lượng</td>
@@ -18,16 +20,22 @@
             <td></td>
             <td></td>
         </tr>
-        @foreach (CardItem item in Model.list)
+        @if (Model.list != null)
         {
-            <tr>
-                
-                <td>@item.sTensp</td>
-                <td><img src="~/Content/HinhAnh/@item.sAnhbia" class="w-25 h-25"/></td>
-                <td>@item.iSoluong</td>
-                <td>@item.dDongia</td>
-                <td>@item.ThanhTien</td>
-            </tr>
+            foreach (CardItem item in Model.list)
+            {
+                <tr>
+
+                    <td>@item.sTensp</td>
+                    <td><img src="~/Content/HinhAnh/@item.sAnhbia" class="w-25 h-25" /></td>
+                    <td>@item.iSoluong</td>
+                    <td>@item.dDongia</td>
+                    <td>@item.ThanhTien</td>
+                    <td>
+                        @Html.ActionLink("Xóa sản phẩm", "Xoasp", "Chitiet", new { msp = item.iMasp, sl = item.iSoluong },null)
+                    </td>
+                </tr>
+            }
         }
         <tr>
             <td>Tổng</td>
@@ -37,6 +45,22 @@
             <td></td>
             <td>@Model.Tongthanhtien()</td>
             <td><button class="btn btn-secondary">@Html.ActionLink("Xóa giỏ hàng", "XoaGioHang", "Chitiet")</button></td>
-            <td><button class="btn btn-secondary">@Html.ActionLink("Đặt hàng", "XacNhanGioHang", "Chitiet")</button></td>
+            <td>
+                @if (Model.SoMatHang() != 0)
+                {
+                    <button class="btn btn-secondary">@Html.ActionLink("Đặt hàng", "XacNhanGioHang", "Chitiet")</button>
+                }
+                else
+                {
+                    <button class="btn btn-secondary">@Html.ActionLink("Về trang chủ", "Vetrangchu", "Chitiet")</button>
+                }
+            </td>
         </tr>
     </table>
+}
+else
+{
+    <lable>
+        Chưa có sản phẩm 
+    </lable>
+}

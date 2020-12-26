@@ -64,7 +64,6 @@ namespace DoanWebQLMYPHAM.Controllers
         [HttpGet]
         public ActionResult Dangnhap()
         {
-
             return View();
         }
         [HttpPost]

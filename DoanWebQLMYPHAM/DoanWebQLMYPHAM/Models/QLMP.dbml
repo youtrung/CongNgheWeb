@@ -17,6 +17,15 @@
       <Association Name="Thuonghieu_Sanpham" Member="Sanphams" ThisKey="Mathuonghieu" OtherKey="Mathuonghieu" Type="Sanpham" />
     </Type>
   </Table>
+  <Table Name="dbo.CHITIETSANPHAM" Member="CHITIETSANPHAMs">
+    <Type Name="CHITIETSANPHAM">
+      <Column Name="Masp" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AnhBia1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AnhBia2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AnhBia3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Sanpham_CHITIETSANPHAM" Member="Sanpham" ThisKey="Masp" OtherKey="Masp" Type="Sanpham" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
     <Type Name="DonHang">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -63,6 +72,7 @@
       <Column Name="Maxuatxu" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Moi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Sanpham_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="Masp" OtherKey="Masp" Type="ChiTietDonHang" />
+      <Association Name="Sanpham_CHITIETSANPHAM" Member="CHITIETSANPHAM" ThisKey="Masp" OtherKey="Masp" Type="CHITIETSANPHAM" Cardinality="One" />
       <Association Name="NhaXuatXu_Sanpham" Member="NhaXuatXu" ThisKey="Maxuatxu" OtherKey="Maxuatxu" Type="NhaXuatXu" IsForeignKey="true" />
       <Association Name="Thuonghieu_Sanpham" Member="Thuonghieu" ThisKey="Mathuonghieu" OtherKey="Mathuonghieu" Type="Thuonghieu" IsForeignKey="true" />
     </Type>

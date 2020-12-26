@@ -36,6 +36,9 @@ namespace DoanWebQLMYPHAM.Models
     partial void InsertThuonghieu(Thuonghieu instance);
     partial void UpdateThuonghieu(Thuonghieu instance);
     partial void DeleteThuonghieu(Thuonghieu instance);
+    partial void InsertCHITIETSANPHAM(CHITIETSANPHAM instance);
+    partial void UpdateCHITIETSANPHAM(CHITIETSANPHAM instance);
+    partial void DeleteCHITIETSANPHAM(CHITIETSANPHAM instance);
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
@@ -93,6 +96,14 @@ namespace DoanWebQLMYPHAM.Models
 			get
 			{
 				return this.GetTable<Thuonghieu>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CHITIETSANPHAM> CHITIETSANPHAMs
+		{
+			get
+			{
+				return this.GetTable<CHITIETSANPHAM>();
 			}
 		}
 		
@@ -456,6 +467,181 @@ namespace DoanWebQLMYPHAM.Models
 		{
 			this.SendPropertyChanging();
 			entity.Thuonghieu = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETSANPHAM")]
+	public partial class CHITIETSANPHAM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Masp;
+		
+		private string _AnhBia1;
+		
+		private string _AnhBia2;
+		
+		private string _AnhBia3;
+		
+		private EntityRef<Sanpham> _Sanpham;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaspChanging(int value);
+    partial void OnMaspChanged();
+    partial void OnAnhBia1Changing(string value);
+    partial void OnAnhBia1Changed();
+    partial void OnAnhBia2Changing(string value);
+    partial void OnAnhBia2Changed();
+    partial void OnAnhBia3Changing(string value);
+    partial void OnAnhBia3Changed();
+    #endregion
+		
+		public CHITIETSANPHAM()
+		{
+			this._Sanpham = default(EntityRef<Sanpham>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Masp", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Masp
+		{
+			get
+			{
+				return this._Masp;
+			}
+			set
+			{
+				if ((this._Masp != value))
+				{
+					if (this._Sanpham.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaspChanging(value);
+					this.SendPropertyChanging();
+					this._Masp = value;
+					this.SendPropertyChanged("Masp");
+					this.OnMaspChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhBia1", DbType="NVarChar(MAX)")]
+		public string AnhBia1
+		{
+			get
+			{
+				return this._AnhBia1;
+			}
+			set
+			{
+				if ((this._AnhBia1 != value))
+				{
+					this.OnAnhBia1Changing(value);
+					this.SendPropertyChanging();
+					this._AnhBia1 = value;
+					this.SendPropertyChanged("AnhBia1");
+					this.OnAnhBia1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhBia2", DbType="NVarChar(MAX)")]
+		public string AnhBia2
+		{
+			get
+			{
+				return this._AnhBia2;
+			}
+			set
+			{
+				if ((this._AnhBia2 != value))
+				{
+					this.OnAnhBia2Changing(value);
+					this.SendPropertyChanging();
+					this._AnhBia2 = value;
+					this.SendPropertyChanged("AnhBia2");
+					this.OnAnhBia2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhBia3", DbType="NVarChar(MAX)")]
+		public string AnhBia3
+		{
+			get
+			{
+				return this._AnhBia3;
+			}
+			set
+			{
+				if ((this._AnhBia3 != value))
+				{
+					this.OnAnhBia3Changing(value);
+					this.SendPropertyChanging();
+					this._AnhBia3 = value;
+					this.SendPropertyChanged("AnhBia3");
+					this.OnAnhBia3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Sanpham_CHITIETSANPHAM", Storage="_Sanpham", ThisKey="Masp", OtherKey="Masp", IsForeignKey=true)]
+		public Sanpham Sanpham
+		{
+			get
+			{
+				return this._Sanpham.Entity;
+			}
+			set
+			{
+				Sanpham previousValue = this._Sanpham.Entity;
+				if (((previousValue != value) 
+							|| (this._Sanpham.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Sanpham.Entity = null;
+						previousValue.CHITIETSANPHAM = null;
+					}
+					this._Sanpham.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETSANPHAM = this;
+						this._Masp = value.Masp;
+					}
+					else
+					{
+						this._Masp = default(int);
+					}
+					this.SendPropertyChanged("Sanpham");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1134,6 +1320,8 @@ namespace DoanWebQLMYPHAM.Models
 		
 		private EntitySet<ChiTietDonHang> _ChiTietDonHangs;
 		
+		private EntityRef<CHITIETSANPHAM> _CHITIETSANPHAM;
+		
 		private EntityRef<NhaXuatXu> _NhaXuatXu;
 		
 		private EntityRef<Thuonghieu> _Thuonghieu;
@@ -1167,6 +1355,7 @@ namespace DoanWebQLMYPHAM.Models
 		public Sanpham()
 		{
 			this._ChiTietDonHangs = new EntitySet<ChiTietDonHang>(new Action<ChiTietDonHang>(this.attach_ChiTietDonHangs), new Action<ChiTietDonHang>(this.detach_ChiTietDonHangs));
+			this._CHITIETSANPHAM = default(EntityRef<CHITIETSANPHAM>);
 			this._NhaXuatXu = default(EntityRef<NhaXuatXu>);
 			this._Thuonghieu = default(EntityRef<Thuonghieu>);
 			OnCreated();
@@ -1390,6 +1579,35 @@ namespace DoanWebQLMYPHAM.Models
 			set
 			{
 				this._ChiTietDonHangs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Sanpham_CHITIETSANPHAM", Storage="_CHITIETSANPHAM", ThisKey="Masp", OtherKey="Masp", IsUnique=true, IsForeignKey=false)]
+		public CHITIETSANPHAM CHITIETSANPHAM
+		{
+			get
+			{
+				return this._CHITIETSANPHAM.Entity;
+			}
+			set
+			{
+				CHITIETSANPHAM previousValue = this._CHITIETSANPHAM.Entity;
+				if (((previousValue != value) 
+							|| (this._CHITIETSANPHAM.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CHITIETSANPHAM.Entity = null;
+						previousValue.Sanpham = null;
+					}
+					this._CHITIETSANPHAM.Entity = value;
+					if ((value != null))
+					{
+						value.Sanpham = this;
+					}
+					this.SendPropertyChanged("CHITIETSANPHAM");
+				}
 			}
 		}
 		

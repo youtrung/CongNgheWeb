@@ -203,6 +203,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\css\Chitiet.css" />
     <Content Include="Content\bootstrap\css\dsthuonghieu.css" />
     <Content Include="Content\bootstrap\css\hoverimg.css" />
     <Content Include="Content\bootstrap\css\PageList.css" />
@@ -255,6 +256,9 @@
     <Content Include="Content\HinhAnh\facebook.png" />
     <Content Include="Content\HinhAnh\gach.png" />
     <Content Include="Content\HinhAnh\giohang.png" />
+    <Content Include="Content\HinhAnh\hinh1.png" />
+    <Content Include="Content\HinhAnh\hinh2.png" />
+    <Content Include="Content\HinhAnh\hinh3.png" />
     <Content Include="Content\HinhAnh\insta.png" />
     <Content Include="Content\HinhAnh\Logo_1.jpg" />
     <Content Include="Content\HinhAnh\Logo_selenia.jpg" />

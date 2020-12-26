@@ -138,12 +138,16 @@ namespace DoanWebQLMYPHAM.Controllers
         [HttpPost]
         public ActionResult TimKiemSP(FormCollection col,int? page)
         {
-            int pageSize = 25;
+            int pageSize = 9;
             int pagenumber = (page ?? 1);
             string tensp = col["txtTimKiem"];
             List<Sanpham> sp = data.Sanphams.Where(r => r.Tensp.Contains(tensp)).ToList();
             var onePageOfProducts = sp.ToPagedList(pagenumber, pageSize);
+            ViewBag.th = new SelectList(data.Thuonghieus.ToList(), "Mathuonghieu", "Tenthuonghieu");
+            ViewBag.xx = new SelectList(data.NhaXuatXus.ToList(), "Maxuatxu", "Ten");
             ViewBag.OnePageOfProducts = onePageOfProducts;
+            KhachHang k = (KhachHang)Session["KH"];
+            ViewBag.kh = k;
             return View("TrangChu",onePageOfProducts);
         }
         public ActionResult Logout()

@@ -8,10 +8,11 @@ using DoanWebQLMYPHAM.Models;
 namespace DoanWebQLMYPHAM.Controllers
 {
    
-    public class ChitietController : Controller
+    public  class ChitietController : Controller
     {
         QLMPDataContext db = new QLMPDataContext();
         // GET: Chitiet
+
       
         public ActionResult HienThiChiTiet(int id)
         {
@@ -86,6 +87,7 @@ namespace DoanWebQLMYPHAM.Controllers
                 ct.Masp = it.iMasp;
                 ct.MaDonHang = dh.MaDonHang;
                 ct.SoLuong = it.iSoluong;
+                ct.DonGia = (decimal)it.ThanhTien * it.iSoluong;
                 db.ChiTietDonHangs.InsertOnSubmit(ct);
                 db.SubmitChanges();
             }
@@ -98,10 +100,19 @@ namespace DoanWebQLMYPHAM.Controllers
             var dh = db.DonHangs.ToList();
             return View(dh);
         }
-        public ActionResult GiaoHang(FormCollection col)
+        [HttpPost]
+        public ActionResult Giaohang(FormCollection col)
         {
-         
-            return View();
+            
+            
+            foreach (var pair in col.Each())
+            {
+                DonHang dh = db.DonHangs.Where(t => t.MaDonHang == Int32.Parse(pair.Value)).SingleOrDefault();
+                dh.NgayGiao = DateTime.Now;
+                db.SubmitChanges();
+            }
+            var donhang = db.DonHangs.ToList();
+            return View("QuanLiDonHang",donhang);
         }
         public ActionResult XoaGioHang()
         {

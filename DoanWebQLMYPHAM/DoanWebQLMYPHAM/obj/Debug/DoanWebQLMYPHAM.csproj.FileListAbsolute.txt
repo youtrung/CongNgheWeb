@@ -64,3 +64,4 @@ D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.csproj.CopyComplete
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.dll
 D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.pdb
+D:\GitHub\CongNgheWeb\DoanWebQLMYPHAM\DoanWebQLMYPHAM\obj\Debug\DoanWebQLMYPHAM.csprojAssemblyReference.cache

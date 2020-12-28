@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="text-center">
-        <form action="~/Chitiet/LuuDonHang" method="post" onsubmit="return validateForm()">
+        <form action="~/Chitiet/LuuDonHang" method="post" >
             <table class="table">
                 <tr>
                     <td colspan="2">Thông tin đặt hàng</td>
@@ -65,20 +65,5 @@
 
 
 
-        <script language="javascript">
-            function validateForm() {
-                // Bước 1: Lấy giá trị của ngaygiao
-                var ngaygiao = document.getElementById('txtNgaygiao').value;
-                // Bước 2: Kiểm tra dữ liệu hợp lệ hay không
-                if (ngaygiao == '') {
-                    alert('Bạn chưa nhập ngày tháng');
-                }
-                else {
-                    alert('Dữ liệu hợp lệ, ta có thể chấp nhận submit form');
-                    return true;
-                }
-                return false;
-            }
-        </script>
     </div>
 </div>

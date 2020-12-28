@@ -77,7 +77,10 @@ namespace DoanWebQLMYPHAM.Controllers
             //luu thong tin 
             DonHang dh = new DonHang();
             dh.NgayDat = DateTime.Now;
-            dh.NgayGiao = DateTime.Parse(ngaygiao);
+            if (ngaygiao != "")
+            {
+                dh.NgayGiao = DateTime.Parse(ngaygiao);
+            }    
             dh.MaKH = kh.MaKH;
             db.DonHangs.InsertOnSubmit(dh);
             db.SubmitChanges();
